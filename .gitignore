@@ -1,0 +1,12 @@
+node_modules/
+dist/
+bench/.browsers/
+bench/competitors/*/
+bench/competitors/*.zip
+bench/results/raw/
+bench/.profiles/
+build/keys/
+bench/corpus/raw/
+bench/results/*.log
+veil-*.zip
+veil-*.zip.sha256

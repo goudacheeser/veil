@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Veil",
+  "version": "0.0.0",
+  "description": "Content blocker with a full ABP/uBO filter engine. No telemetry.",
+  "minimum_chrome_version": "137",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "scripting",
+    "storage",
+    "unlimitedStorage",
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "alarms"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background/sw.js", "type": "module" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content/cosmetic.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true,
+      "match_origin_as_fallback": true
+    }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["resources/*"], "matches": ["<all_urls>"] }
+  ],
+  "action": { "default_popup": "ui/popup.html", "default_title": "Veil" },
+  "options_ui": { "page": "ui/options.html", "open_in_tab": true },
+  "icons": {}
+}

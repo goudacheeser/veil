@@ -1,0 +1,82 @@
+{
+  "lists": {
+    "easylist": {
+      "url": "https://easylist.to/easylist/easylist.txt",
+      "sha256": "285a66f43956b48a658439b045ef6484752841c5dcc234d2fad78d2a356a286c",
+      "bytes": 2024345,
+      "fetched": "2026-11-09T22:26:34.921Z"
+    },
+    "easyprivacy": {
+      "url": "https://easylist.to/easylist/easyprivacy.txt",
+      "sha256": "e7cd3956a0b9d4de1ff519af710761535fff95bfebdc93d69aaf00691369dec5",
+      "bytes": 1515893,
+      "fetched": "2026-11-09T22:26:35.124Z"
+    },
+    "ubo-filters": {
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt",
+      "sha256": "73d674807c88016fef58ba055381efea22585faab1a262a6d5fbab3a0bb62ccd",
+      "bytes": 469901,
+      "fetched": "2026-11-09T22:26:35.308Z"
+    },
+    "ubo-privacy": {
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt",
+      "sha256": "7e6c46274393f6c88468771bda7087b7d5ba22770e850f41398a50b0311418dd",
+      "bytes": 185645,
+      "fetched": "2026-11-09T22:26:35.379Z"
+    },
+    "ubo-badware": {
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
+      "sha256": "dfa322b7847aa3f1d0dbc59eed02828d0899b1371591c98e81cd024fb3183909",
+      "bytes": 273695,
+      "fetched": "2026-11-09T22:26:35.435Z"
+    },
+    "ubo-quick-fixes": {
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/quick-fixes.txt",
+      "sha256": "cd5e693e97c5fa4d177d81a9a9474c13712bf5f2bafe043265d9d48d6d575be4",
+      "bytes": 86106,
+      "fetched": "2026-11-09T22:26:35.485Z"
+    },
+    "ubo-unbreak": {
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt",
+      "sha256": "0645b79f33dd0504a1e8c62c723dbb77edb82f2ae46b2a5edb88a9ea2bb8de24",
+      "bytes": 282145,
+      "fetched": "2026-11-09T22:26:35.542Z"
+    },
+    "easylist-antiadblock": {
+      "url": "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
+      "sha256": "a3468ad9faec2dd2ea29fdfb272dcb5790582a26bae4a0bfc1a72e2c653a020a",
+      "bytes": 72758,
+      "fetched": "2026-11-09T22:26:36.630Z"
+    },
+    "peter-lowe": {
+      "url": "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext",
+      "sha256": "b4a5966d889e5ffb2c05f76ff6ae32615a862df305241a035a497b1989dfe447",
+      "bytes": 95236,
+      "fetched": "2026-11-09T22:26:37.382Z"
+    },
+    "fanboy-annoyance": {
+      "url": "https://easylist.to/easylist/fanboy-annoyance.txt",
+      "sha256": "472a47982465517982f9037fcbbf5463375bbe35cb5beb738fdfd44fde8bd438",
+      "bytes": 1734665,
+      "fetched": "2026-11-09T22:26:37.617Z"
+    },
+    "ubo-annoyances-cookies": {
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-cookies.txt",
+      "sha256": "ccae3d5d37c948acf2718b9d344ebf0083f270dd540b01511e6ed08c81681b07",
+      "bytes": 378547,
+      "fetched": "2026-11-09T22:26:37.664Z"
+    },
+    "ubo-annoyances-others": {
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-others.txt",
+      "sha256": "15cd9cb220cfa06d837f69a4a1ea8bd8f04fd55965144c525b269e0a9728e848",
+      "bytes": 424161,
+      "fetched": "2026-11-09T22:26:37.740Z"
+    },
+    "public_suffix_list": {
+      "url": "https://publicsuffix.org/list/public_suffix_list.dat",
+      "sha256": "dc00ceb7bb9256c41506b12a863db6a4b1c6021771eeccf5e073827750ac4b74",
+      "bytes": 338689,
+      "fetched": "2026-11-09T22:26:37.980Z"
+    }
+  }
+}

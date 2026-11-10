@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Veil</title>
+<style>
+body{font:13px system-ui;margin:0;width:260px;background:#1b1b1f;color:#eee}
+.site{padding:10px 12px;border-bottom:1px solid #333;font-weight:600;word-break:break-all}
+.row{display:flex;justify-content:space-between;align-items:center;padding:8px 12px}
+button{background:#2b2b31;color:#eee;border:1px solid #444;border-radius:4px;padding:5px 10px;cursor:pointer}
+button.on{background:#2a7d4f}button.off{background:#7d2a2a}
+.big{font-size:22px}
+.muted{color:#999;font-size:12px}
+.actions{display:flex;gap:6px;padding:8px 12px;border-top:1px solid #333}
+.actions button{flex:1}
+</style></head>
+<body>
+<div class="site" id="site">…</div>
+<div class="row"><span>Blocking on this site</span><button id="toggle">…</button></div>
+<div class="row"><span>Requests blocked in this tab</span><span class="big" id="count">–</span></div>
+<div class="row muted" id="info"></div>
+<div class="actions"><button id="pick">Pick element</button><button id="log">Logger</button><button id="opts">Options</button></div>
+<script type="module" src="popup.js"></script>
+</body></html>

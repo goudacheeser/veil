@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><title>anti-adblock detector suite</title>
+<!-- bait scripts: real detectors load one of these and check a global afterwards -->
+<script src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="http://adtest.test/ads.js"></script>
+<script src="http://adtest.test/prebid-ads.js"></script>
+</head><body>
+<h1>Detector suite</h1>
+<pre id="out"></pre>
+<script>
+// Five detection techniques used by BlockAdBlock, FuckAdBlock and the hand-rolled detectors that
+// copy them. Each records detected=true/false; the harness reads window.__results.
+const results = window.__results = {};
+const done = (name, detected) => { results[name] = detected; document.getElementById('out').textContent = JSON.stringify(results, null, 1); };
+
+// 1. BlockAdBlock-style bait element: create a div with ad class names, check it is hidden/collapsed
+(function baitElement() {
+  const bait = document.createElement('div');
+  bait.setAttribute('class', 'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links ad-placement ad-placeholder adbadge BannerAd adsbox');
+  bait.setAttribute('style', 'width: 1px !important; height: 1px !important; position: absolute !important; left: -10000px !important; top: -1000px !important;');
+  bait.innerHTML = '&nbsp;';
+  document.body.appendChild(bait);
+  setTimeout(() => {
+    const cs = getComputedStyle(bait);
+    const detected = bait.offsetParent === null || bait.offsetHeight === 0 || bait.offsetLeft === 0 || bait.offsetTop === 0 || bait.offsetWidth === 0 || bait.clientHeight === 0 || bait.clientWidth === 0 || cs.display === 'none' || cs.visibility === 'hidden';
+    done('bait-element', detected);
+  }, 300);
+})();
+
+// 2. adsbygoogle.js load check (the most common "real" detector)
+setTimeout(() => done('adsbygoogle-loaded', !(window.adsbygoogleRealLoaded || (window.adsbygoogle && window.adsbygoogle.loaded === true))), 300);
+
+// 3. generic /ads.js bait (canRunAds pattern)
+setTimeout(() => done('ads-js-bait', window.canRunAds !== true), 300);
+
+// 4. prebid-ads.js bait
+setTimeout(() => done('prebid-bait', window.__bait_prebid !== true && window.canRunAds !== true), 300);
+
+// 5. fetch bait: XHR to an ad URL and see if it errors (BlockAdBlock 4-style)
+(function fetchBait() {
+  fetch('http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?bait=1', { mode: 'no-cors' })
+    .then(() => done('fetch-bait', false), () => done('fetch-bait', true));
+})();
+
+// 6. FuckAdBlock library behaviour: the library is injected by the page and reports via callbacks
+(function fab() {
+  // minimal re-implementation of FuckAdBlock's check: bait element + loop
+  function FuckAdBlock(opts) { this._var = { event: { detected: [], notDetected: [] } }; }
+  FuckAdBlock.prototype.on = function (d, f) { this._var.event[d ? 'detected' : 'notDetected'].push(f); return this; };
+  FuckAdBlock.prototype.check = function () {
+    const b = document.createElement('div'); b.setAttribute('class', 'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links');
+    b.setAttribute('style', 'width:1px!important;height:1px!important;position:absolute!important;left:-10000px!important;top:-1000px!important;'); b.innerHTML = '&nbsp;'; document.body.appendChild(b);
+    setTimeout(() => { const detected = b.offsetParent === null || b.offsetHeight === 0 || getComputedStyle(b).display === 'none'; b.remove(); for (const f of this._var.event[detected ? 'detected' : 'notDetected']) f(); }, 300);
+    return true;
+  };
+  window.fuckAdBlock = new FuckAdBlock();
+  window.fuckAdBlock.on(true, () => done('fuckadblock', true)).on(false, () => done('fuckadblock', false)).check();
+})();
+
+// informational: did the bait resources actually load from the network? (false = blocker stopped them)
+setTimeout(() => { done('_bait: adsbygoogle.js fetched from network', !!window.adsbygoogleRealLoaded); done('_bait: ads.js fetched from network', !!window.__ads_js_loaded); done('_bait: blockadblock.js fetched from network', !!(window.blockAdBlock && window.blockAdBlock.__real)); }, 500);
+
+// 7. blockAdBlock global present check (sites test `typeof blockAdBlock === 'undefined'` after loading the lib from a CDN that blockers block)
+setTimeout(() => done('blockadblock-lib-missing', typeof window.blockAdBlock === 'undefined' && typeof window.BlockAdBlock === 'undefined'), 400);
+</script>
+<script src="http://adtest.test/blockadblock.js"></script>
+</body></html>

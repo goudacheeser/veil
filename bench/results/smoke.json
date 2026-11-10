@@ -1,0 +1,120 @@
+{
+ "run": "smoke",
+ "configs": [
+  "none",
+  "veil"
+ ],
+ "paired": 3,
+ "perConfig": {
+  "none": {
+   "sites": 3,
+   "requests": 384,
+   "adRequests": 114,
+   "blocked": 0,
+   "redirected": 0,
+   "falseNeg": 114,
+   "falseNegTP": 107,
+   "blockedNotAd": 0,
+   "bytes": 21296021,
+   "errors": 1,
+   "failedLoads": 1,
+   "byCategory": {
+    "news": {
+     "sites": 3,
+     "adRequests": 114,
+     "blocked": 0,
+     "falseNeg": 114
+    }
+   },
+   "fnHosts": {
+    "lightning.cnn.com": 2,
+    "cdn.optimizely.com": 2,
+    "imasdk.googleapis.com": 1,
+    "events.brightline.tv": 4,
+    "c.amazon-adsystem.com": 2,
+    "static.foxnews.com": 2,
+    "config.aps.amazon-adsystem.com": 1,
+    "rockspreading.com": 5,
+    "static.chartbeat.com": 2,
+    "www.googletagmanager.com": 2,
+    "static.criteo.net": 1,
+    "cdn-gl.imrworldwide.com": 2,
+    "www.knotch-cdn.com": 1,
+    "global.ketchcdn.com": 8,
+    "secure-us.imrworldwide.com": 1,
+    "cdn.confiant-integrations.net": 2,
+    "aax.amazon-adsystem.com": 1,
+    "dpm.demdex.net": 3,
+    "cdn.taboola.com": 4,
+    "static.qovani.com": 1,
+    "prod-foxkit.kts.fox": 2,
+    "js.appboycdn.com": 1,
+    "smetrics.foxnews.com": 3,
+    "sdk.iad-05.braze.com": 1,
+    "gum.criteo.com": 1,
+    "merequartz.com": 1,
+    "dt.adsafeprotected.com": 1,
+    "mab.chartbeat.com": 1,
+    "sslwidget.criteo.com": 1,
+    "trc.taboola.com": 2,
+    "prod.fennec.atp.fox": 3,
+    "sb.scorecardresearch.com": 2,
+    "static.trueanthem.com": 4,
+    "pix.pub": 2,
+    "loki-ingest.fox.com": 3,
+    "vidstat.taboola.com": 9,
+    "images.taboola.com": 7,
+    "beacon.taboola.com": 6,
+    "logx.optimizely.com": 1,
+    "ping.chartbeat.net": 1,
+    "ch-vid-events.taboola.com": 4,
+    "secure-dcr.imrworldwide.com": 2,
+    "wf.taboola.com": 1,
+    "ch-wf.taboola.com": 1,
+    "prebid-server.rubiconproject.com": 3,
+    "hbopenbid.pubmatic.com": 3,
+    "image8.pubmatic.com": 1
+   },
+   "breakage": [],
+   "loadMedian": 7662.5,
+   "loadP95": 13249.5,
+   "dclMedian": 3364.5
+  },
+  "veil": {
+   "sites": 3,
+   "requests": 295,
+   "adRequests": 46,
+   "blocked": 38,
+   "redirected": 5,
+   "falseNeg": 8,
+   "falseNegTP": 8,
+   "blockedNotAd": 1,
+   "bytes": 21768884,
+   "errors": 7,
+   "failedLoads": 1,
+   "byCategory": {
+    "news": {
+     "sites": 3,
+     "adRequests": 46,
+     "blocked": 38,
+     "falseNeg": 8
+    }
+   },
+   "fnHosts": {
+    "global.ketchcdn.com": 8
+   },
+   "breakage": [
+    {
+     "site": "foxnews.com",
+     "category": "news",
+     "flags": [
+      "js errors 1→7"
+     ]
+    }
+   ],
+   "loadMedian": 7589,
+   "loadP95": 8621.09999999404,
+   "dclMedian": 3456.800000011921
+  }
+ }
+}

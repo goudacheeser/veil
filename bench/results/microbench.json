@@ -1,0 +1,26 @@
+{
+ "decisions": 20383,
+ "blockedByReference": 107,
+ "readNetworkBinMs": 7.94,
+ "openNetworkIndexMs": 6.9,
+ "networkBinMB": 11.55,
+ "readCosmeticBinMs": 1.91,
+ "openCosmeticIndexMs": 1.17,
+ "cosmeticBinMB": 1.88,
+ "perDecisionUs": {
+  "median": 50.6,
+  "p95": 118.6,
+  "p99": 214.1,
+  "mean": 63.96
+ },
+ "cosmeticHostLookupUs": {
+  "hosts": 5,
+  "median": 45.5,
+  "p95": 593.1
+ },
+ "genericLookup20ClassesUs": {
+  "median": 2.2,
+  "p95": 7.2
+ },
+ "node": "v24.20.0"
+}

@@ -1,0 +1,110 @@
+{
+ "none": {
+  "fetch-bait": false,
+  "bait-element": false,
+  "adsbygoogle-loaded": false,
+  "ads-js-bait": false,
+  "prebid-bait": false,
+  "fuckadblock": false,
+  "blockadblock-lib-missing": false,
+  "_bait: adsbygoogle.js fetched from network": true,
+  "_bait: ads.js fetched from network": true,
+  "_bait: blockadblock.js fetched from network": true
+ },
+ "veil": {
+  "fetch-bait": false,
+  "bait-element": false,
+  "adsbygoogle-loaded": false,
+  "ads-js-bait": false,
+  "prebid-bait": false,
+  "fuckadblock": false,
+  "blockadblock-lib-missing": false,
+  "_bait: adsbygoogle.js fetched from network": false,
+  "_bait: ads.js fetched from network": false,
+  "_bait: blockadblock.js fetched from network": false
+ },
+ "ubol": {
+  "fetch-bait": false,
+  "bait-element": false,
+  "adsbygoogle-loaded": false,
+  "ads-js-bait": false,
+  "prebid-bait": false,
+  "fuckadblock": false,
+  "blockadblock-lib-missing": false,
+  "_bait: adsbygoogle.js fetched from network": false,
+  "_bait: ads.js fetched from network": true,
+  "_bait: blockadblock.js fetched from network": false
+ },
+ "adguard": {
+  "fetch-bait": true,
+  "bait-element": false,
+  "adsbygoogle-loaded": true,
+  "ads-js-bait": false,
+  "prebid-bait": false,
+  "fuckadblock": false,
+  "blockadblock-lib-missing": false,
+  "_bait: adsbygoogle.js fetched from network": false,
+  "_bait: ads.js fetched from network": true,
+  "_bait: blockadblock.js fetched from network": true
+ },
+ "ghostery": {
+  "fetch-bait": false,
+  "bait-element": false,
+  "adsbygoogle-loaded": false,
+  "ads-js-bait": false,
+  "prebid-bait": false,
+  "fuckadblock": false,
+  "blockadblock-lib-missing": false,
+  "_bait: adsbygoogle.js fetched from network": true,
+  "_bait: ads.js fetched from network": true,
+  "_bait: blockadblock.js fetched from network": true
+ },
+ "none126": {
+  "fetch-bait": false,
+  "bait-element": false,
+  "adsbygoogle-loaded": false,
+  "ads-js-bait": false,
+  "prebid-bait": false,
+  "fuckadblock": false,
+  "blockadblock-lib-missing": false,
+  "_bait: adsbygoogle.js fetched from network": true,
+  "_bait: ads.js fetched from network": true,
+  "_bait: blockadblock.js fetched from network": true
+ },
+ "ubo": {
+  "fetch-bait": false,
+  "bait-element": false,
+  "adsbygoogle-loaded": false,
+  "ads-js-bait": false,
+  "prebid-bait": false,
+  "fuckadblock": false,
+  "blockadblock-lib-missing": false,
+  "_bait: adsbygoogle.js fetched from network": false,
+  "_bait: ads.js fetched from network": true,
+  "_bait: blockadblock.js fetched from network": false
+ },
+ "brave-none": {
+  "fetch-bait": false,
+  "bait-element": false,
+  "adsbygoogle-loaded": false,
+  "ads-js-bait": false,
+  "prebid-bait": false,
+  "fuckadblock": false,
+  "blockadblock-lib-missing": false,
+  "_bait: adsbygoogle.js fetched from network": true,
+  "_bait: ads.js fetched from network": true,
+  "_bait: blockadblock.js fetched from network": true
+ },
+ "brave": {
+  "fetch-bait": false,
+  "bait-element": false,
+  "adsbygoogle-loaded": false,
+  "ads-js-bait": false,
+  "prebid-bait": false,
+  "fuckadblock": false,
+  "blockadblock-lib-missing": false,
+  "_bait: adsbygoogle.js fetched from network": false,
+  "_bait: ads.js fetched from network": true,
+  "_bait: blockadblock.js fetched from network": true
+ }
+}

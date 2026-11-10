@@ -1,0 +1,96 @@
+{
+  "lists": [
+    {
+      "name": "veil-defaults",
+      "group": "core",
+      "local": "build/veil-defaults.txt",
+      "license": "MIT",
+      "enabled": true
+    },
+    {
+      "name": "easylist",
+      "group": "core",
+      "url": "https://easylist.to/easylist/easylist.txt",
+      "license": "GPL-3.0 / CC BY-SA 3.0",
+      "enabled": true
+    },
+    {
+      "name": "easyprivacy",
+      "group": "core",
+      "url": "https://easylist.to/easylist/easyprivacy.txt",
+      "license": "GPL-3.0 / CC BY-SA 3.0",
+      "enabled": true
+    },
+    {
+      "name": "ubo-filters",
+      "group": "core",
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt",
+      "license": "GPL-3.0",
+      "enabled": true
+    },
+    {
+      "name": "ubo-privacy",
+      "group": "core",
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt",
+      "license": "GPL-3.0",
+      "enabled": true
+    },
+    {
+      "name": "ubo-badware",
+      "group": "core",
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
+      "license": "GPL-3.0",
+      "enabled": true
+    },
+    {
+      "name": "ubo-quick-fixes",
+      "group": "core",
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/quick-fixes.txt",
+      "license": "GPL-3.0",
+      "enabled": true
+    },
+    {
+      "name": "ubo-unbreak",
+      "group": "core",
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt",
+      "license": "GPL-3.0",
+      "enabled": true
+    },
+    {
+      "name": "easylist-antiadblock",
+      "group": "core",
+      "url": "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
+      "license": "GPL-3.0 / CC BY-SA 3.0",
+      "enabled": true
+    },
+    {
+      "name": "peter-lowe",
+      "group": "core",
+      "url": "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext",
+      "license": "McRae General Public License",
+      "enabled": true
+    },
+    {
+      "name": "fanboy-annoyance",
+      "group": "annoyances",
+      "url": "https://easylist.to/easylist/fanboy-annoyance.txt",
+      "license": "GPL-3.0 / CC BY-SA 3.0",
+      "enabled": false
+    },
+    {
+      "name": "ubo-annoyances-cookies",
+      "group": "annoyances",
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-cookies.txt",
+      "license": "GPL-3.0",
+      "enabled": false
+    },
+    {
+      "name": "ubo-annoyances-others",
+      "group": "annoyances",
+      "url": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-others.txt",
+      "license": "GPL-3.0",
+      "enabled": false
+    }
+  ],
+  "psl": "https://publicsuffix.org/list/public_suffix_list.dat"
+}

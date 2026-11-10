@@ -1,0 +1,1 @@
+Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and (($_.CommandLine -like '*bench/run.js*') -or ($_.CommandLine -like '*bench\.profiles*')) -and ($_.Name -like 'node*' -or $_.Name -like 'chrome*' -or $_.Name -like 'brave*') } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue; $_.Name }

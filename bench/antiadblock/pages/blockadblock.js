@@ -1,0 +1,1 @@
+/* stands in for the real BlockAdBlock CDN script */ window.blockAdBlock = { __real: true, onDetected(){return this}, onNotDetected(){return this}, check(){return true}, setOption(){return this} };

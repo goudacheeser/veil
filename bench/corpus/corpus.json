@@ -1,0 +1,2514 @@
+{
+ "generated": "2026-11-09",
+ "seed": 20261109,
+ "tranco": "top-1m.csv snapshot in bench/corpus/raw (date in zip)",
+ "counts": {
+  "news": 100,
+  "video": 75,
+  "shopping": 100,
+  "social": 50,
+  "longtail": 175
+ },
+ "sites": [
+  {
+   "domain": "cnn.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "foxnews.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "nytimes.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "washingtonpost.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "theguardian.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "bbc.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "reuters.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "apnews.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "nbcnews.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "cbsnews.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "abcnews.go.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "usatoday.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "wsj.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "bloomberg.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "forbes.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "businessinsider.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "cnbc.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "huffpost.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "dailymail.co.uk",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "thesun.co.uk",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "mirror.co.uk",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "independent.co.uk",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "telegraph.co.uk",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "express.co.uk",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "nypost.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "latimes.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "chicagotribune.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "sfgate.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "nydailynews.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "politico.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "thehill.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "axios.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "vox.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "slate.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "theatlantic.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "newyorker.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "time.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "newsweek.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "buzzfeednews.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "vice.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "dw.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "france24.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "lemonde.fr",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "lefigaro.fr",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "spiegel.de",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "bild.de",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "zeit.de",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "welt.de",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "faz.net",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "sueddeutsche.de",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "corriere.it",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "repubblica.it",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "elpais.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "elmundo.es",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "abc.es",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "globo.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "uol.com.br",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "folha.uol.com.br",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "clarin.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "lanacion.com.ar",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "eluniversal.com.mx",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "timesofindia.indiatimes.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "hindustantimes.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "ndtv.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "indianexpress.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "thehindu.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "news18.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "indiatoday.in",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "scmp.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "japantimes.co.jp",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "asahi.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "straitstimes.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "smh.com.au",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "news.com.au",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "abc.net.au",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "theage.com.au",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "nzherald.co.nz",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "cbc.ca",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "globeandmail.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "thestar.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "nationalpost.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "aljazeera.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "rt.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "timesofisrael.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "haaretz.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "hurriyet.com.tr",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "sabah.com.tr",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "tass.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "kyivindependent.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "rte.ie",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "irishtimes.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "techcrunch.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "theverge.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "arstechnica.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "wired.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "engadget.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "gizmodo.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "mashable.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "cnet.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "zdnet.com",
+   "category": "news",
+   "source": "curated"
+  },
+  {
+   "domain": "youtube.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "twitch.tv",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "dailymotion.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "vimeo.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "tiktok.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "rumble.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "bitchute.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "odysee.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "kick.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "crunchyroll.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "funimation.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "hulu.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "peacocktv.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "pluto.tv",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "tubitv.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "plex.tv",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "roku.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "vudu.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "crackle.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "xumo.tv",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "imdb.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "rottentomatoes.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "metacritic.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "ign.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "gamespot.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "kotaku.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "polygon.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "pcgamer.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "eurogamer.net",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "gamesradar.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "rockpapershotgun.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "gameinformer.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "9gag.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "imgur.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "giphy.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "tenor.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "soundcloud.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "bandcamp.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "mixcloud.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "audiomack.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "last.fm",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "genius.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "azlyrics.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "lyrics.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "musixmatch.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "shazam.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "deezer.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "spotify.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "pandora.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "iheart.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "tunein.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "podbean.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "buzzsprout.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "anchor.fm",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "bilibili.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "youku.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "iqiyi.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "nicovideo.jp",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "vk.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "ok.ru",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "coub.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "liveleak.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "veoh.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "metacafe.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "break.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "ebaumsworld.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "collegehumor.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "funnyordie.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "cheezburger.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "knowyourmeme.com",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "4anime.gg",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "9anime.to",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "gogoanime.tv",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "kissanime.ru",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "animeflv.net",
+   "category": "video",
+   "source": "curated"
+  },
+  {
+   "domain": "amazon.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "ebay.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "walmart.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "target.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "bestbuy.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "homedepot.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "lowes.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "costco.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "wayfair.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "overstock.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "etsy.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "aliexpress.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "alibaba.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "wish.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "temu.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "shein.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "zara.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "hm.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "uniqlo.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "gap.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "oldnavy.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "nordstrom.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "macys.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "kohls.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "jcpenney.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "sears.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "newegg.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "bhphotovideo.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "adorama.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "microcenter.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "zappos.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "asos.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "boohoo.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "nike.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "adidas.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "underarmour.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "footlocker.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "finishline.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "dickssportinggoods.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "rei.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "cabelas.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "basspro.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "chewy.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "petco.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "petsmart.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "sephora.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "ulta.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "cvs.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "walgreens.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "riteaid.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "kroger.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "safeway.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "instacart.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "groupon.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "rakuten.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "slickdeals.net",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "retailmenot.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "dealnews.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "woot.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "flipkart.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "myntra.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "snapdeal.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "jd.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "taobao.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "tmall.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "mercadolibre.com.ar",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "mercadolibre.com.mx",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "americanas.com.br",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "magazineluiza.com.br",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "otto.de",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "zalando.de",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "mediamarkt.de",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "saturn.de",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "cdiscount.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "fnac.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "darty.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "argos.co.uk",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "currys.co.uk",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "johnlewis.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "very.co.uk",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "next.co.uk",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "marksandspencer.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "tesco.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "sainsburys.co.uk",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "asda.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "ikea.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "lego.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "gamestop.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "steampowered.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "humblebundle.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "gog.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "fanatical.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "cdkeys.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "g2a.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "kinguin.net",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "newchic.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "banggood.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "gearbest.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "dhgate.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "lightinthebox.com",
+   "category": "shopping",
+   "source": "curated"
+  },
+  {
+   "domain": "facebook.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "instagram.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "twitter.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "x.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "reddit.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "pinterest.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "linkedin.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "tumblr.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "quora.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "snapchat.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "discord.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "telegram.org",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "whatsapp.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "threads.net",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "mastodon.social",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "bsky.app",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "weibo.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "douban.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "zhihu.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "nextdoor.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "meetup.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "flickr.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "deviantart.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "behance.net",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "dribbble.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "medium.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "substack.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "wordpress.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "blogger.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "livejournal.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "fandom.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "wikia.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "stackexchange.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "stackoverflow.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "github.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "gitlab.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "producthunt.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "hackernews.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "slashdot.org",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "digg.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "fark.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "somethingawful.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "resetera.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "neogaf.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "gaiaonline.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "xanga.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "myspace.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "tagged.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "badoo.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "care2.com",
+   "category": "social",
+   "source": "curated"
+  },
+  {
+   "domain": "thecozycook.com",
+   "category": "longtail",
+   "source": "tranco#59308"
+  },
+  {
+   "domain": "outputtalkx6ls.net",
+   "category": "longtail",
+   "source": "tranco#26950"
+  },
+  {
+   "domain": "lalaziosiamonoi.it",
+   "category": "longtail",
+   "source": "tranco#73908"
+  },
+  {
+   "domain": "iss.one",
+   "category": "longtail",
+   "source": "tranco#33347"
+  },
+  {
+   "domain": "azure-dns-2.cn",
+   "category": "longtail",
+   "source": "tranco#43308"
+  },
+  {
+   "domain": "mtroyal.ca",
+   "category": "longtail",
+   "source": "tranco#76760"
+  },
+  {
+   "domain": "punishworld.com",
+   "category": "longtail",
+   "source": "tranco#8768"
+  },
+  {
+   "domain": "realclimate.org",
+   "category": "longtail",
+   "source": "tranco#70799"
+  },
+  {
+   "domain": "fe.ru",
+   "category": "longtail",
+   "source": "tranco#96114"
+  },
+  {
+   "domain": "intentsify.io",
+   "category": "longtail",
+   "source": "tranco#44324"
+  },
+  {
+   "domain": "imagepond.net",
+   "category": "longtail",
+   "source": "tranco#76485"
+  },
+  {
+   "domain": "cloudseeplus.com",
+   "category": "longtail",
+   "source": "tranco#37150"
+  },
+  {
+   "domain": "iabtechnologylab.com",
+   "category": "longtail",
+   "source": "tranco#20091"
+  },
+  {
+   "domain": "ort-one-pingone.com",
+   "category": "longtail",
+   "source": "tranco#12374"
+  },
+  {
+   "domain": "clip-studio.com",
+   "category": "longtail",
+   "source": "tranco#13206"
+  },
+  {
+   "domain": "audible.co.jp",
+   "category": "longtail",
+   "source": "tranco#28626"
+  },
+  {
+   "domain": "asia77lu.com",
+   "category": "longtail",
+   "source": "tranco#92426"
+  },
+  {
+   "domain": "lacrossetribune.com",
+   "category": "longtail",
+   "source": "tranco#77289"
+  },
+  {
+   "domain": "scandit.com",
+   "category": "longtail",
+   "source": "tranco#27015"
+  },
+  {
+   "domain": "cbpp.org",
+   "category": "longtail",
+   "source": "tranco#23985"
+  },
+  {
+   "domain": "ankama.com",
+   "category": "longtail",
+   "source": "tranco#26559"
+  },
+  {
+   "domain": "tmspk.net",
+   "category": "longtail",
+   "source": "tranco#36448"
+  },
+  {
+   "domain": "preggophilia.com",
+   "category": "longtail",
+   "source": "tranco#73112"
+  },
+  {
+   "domain": "bongo-chat.com",
+   "category": "longtail",
+   "source": "tranco#91569"
+  },
+  {
+   "domain": "20thcenturystudios.com",
+   "category": "longtail",
+   "source": "tranco#61188"
+  },
+  {
+   "domain": "goodnotes.email",
+   "category": "longtail",
+   "source": "tranco#52519"
+  },
+  {
+   "domain": "ford.it",
+   "category": "longtail",
+   "source": "tranco#78711"
+  },
+  {
+   "domain": "nfz.gov.pl",
+   "category": "longtail",
+   "source": "tranco#35290"
+  },
+  {
+   "domain": "bingobarmy.net",
+   "category": "longtail",
+   "source": "tranco#71907"
+  },
+  {
+   "domain": "mixtubeapp.com",
+   "category": "longtail",
+   "source": "tranco#46284"
+  },
+  {
+   "domain": "booklikes.com",
+   "category": "longtail",
+   "source": "tranco#61480"
+  },
+  {
+   "domain": "anime.nexus",
+   "category": "longtail",
+   "source": "tranco#47811"
+  },
+  {
+   "domain": "seal-one.com",
+   "category": "longtail",
+   "source": "tranco#55071"
+  },
+  {
+   "domain": "taplink.st",
+   "category": "longtail",
+   "source": "tranco#68360"
+  },
+  {
+   "domain": "pingan.com",
+   "category": "longtail",
+   "source": "tranco#25921"
+  },
+  {
+   "domain": "eupedia.com",
+   "category": "longtail",
+   "source": "tranco#86001"
+  },
+  {
+   "domain": "nghean.gov.vn",
+   "category": "longtail",
+   "source": "tranco#69593"
+  },
+  {
+   "domain": "youx.xxx",
+   "category": "longtail",
+   "source": "tranco#17300"
+  },
+  {
+   "domain": "sofitel.com",
+   "category": "longtail",
+   "source": "tranco#59748"
+  },
+  {
+   "domain": "uzbmb.uz",
+   "category": "longtail",
+   "source": "tranco#41797"
+  },
+  {
+   "domain": "usemessages.com",
+   "category": "longtail",
+   "source": "tranco#9664"
+  },
+  {
+   "domain": "aten.com",
+   "category": "longtail",
+   "source": "tranco#87624"
+  },
+  {
+   "domain": "hellowork.careers",
+   "category": "longtail",
+   "source": "tranco#58608"
+  },
+  {
+   "domain": "p99nxpivfscyverz.me",
+   "category": "longtail",
+   "source": "tranco#18789"
+  },
+  {
+   "domain": "ufps.edu.co",
+   "category": "longtail",
+   "source": "tranco#83553"
+  },
+  {
+   "domain": "d-gz.com",
+   "category": "longtail",
+   "source": "tranco#55957"
+  },
+  {
+   "domain": "garena.tw",
+   "category": "longtail",
+   "source": "tranco#87735"
+  },
+  {
+   "domain": "chaport.com",
+   "category": "longtail",
+   "source": "tranco#34992"
+  },
+  {
+   "domain": "jysk.hu",
+   "category": "longtail",
+   "source": "tranco#84225"
+  },
+  {
+   "domain": "githubstatus.com",
+   "category": "longtail",
+   "source": "tranco#27011"
+  },
+  {
+   "domain": "automanager.com",
+   "category": "longtail",
+   "source": "tranco#62240"
+  },
+  {
+   "domain": "d-library.jp",
+   "category": "longtail",
+   "source": "tranco#23931"
+  },
+  {
+   "domain": "livescore.mobi",
+   "category": "longtail",
+   "source": "tranco#9029"
+  },
+  {
+   "domain": "greetingsisland.com",
+   "category": "longtail",
+   "source": "tranco#37760"
+  },
+  {
+   "domain": "eurasiareview.com",
+   "category": "longtail",
+   "source": "tranco#33349"
+  },
+  {
+   "domain": "daryo.uz",
+   "category": "longtail",
+   "source": "tranco#19228"
+  },
+  {
+   "domain": "springfieldnewssun.com",
+   "category": "longtail",
+   "source": "tranco#97904"
+  },
+  {
+   "domain": "edudns-a3.edu.tw",
+   "category": "longtail",
+   "source": "tranco#57175"
+  },
+  {
+   "domain": "dxy.cn",
+   "category": "longtail",
+   "source": "tranco#39420"
+  },
+  {
+   "domain": "mycorporator.in",
+   "category": "longtail",
+   "source": "tranco#11165"
+  },
+  {
+   "domain": "sbdv.ru",
+   "category": "longtail",
+   "source": "tranco#63735"
+  },
+  {
+   "domain": "mailinblue.com",
+   "category": "longtail",
+   "source": "tranco#55288"
+  },
+  {
+   "domain": "hedzappclickballk.com",
+   "category": "longtail",
+   "source": "tranco#90574"
+  },
+  {
+   "domain": "hqporn.xxx",
+   "category": "longtail",
+   "source": "tranco#8793"
+  },
+  {
+   "domain": "mila.by",
+   "category": "longtail",
+   "source": "tranco#77772"
+  },
+  {
+   "domain": "blendlabs.com",
+   "category": "longtail",
+   "source": "tranco#17693"
+  },
+  {
+   "domain": "rmg.co.uk",
+   "category": "longtail",
+   "source": "tranco#18624"
+  },
+  {
+   "domain": "bancatransilvania.ro",
+   "category": "longtail",
+   "source": "tranco#84275"
+  },
+  {
+   "domain": "alhind.com",
+   "category": "longtail",
+   "source": "tranco#92353"
+  },
+  {
+   "domain": "motilaloswal.com",
+   "category": "longtail",
+   "source": "tranco#70516"
+  },
+  {
+   "domain": "netcom.no",
+   "category": "longtail",
+   "source": "tranco#31140"
+  },
+  {
+   "domain": "kimootoko.net",
+   "category": "longtail",
+   "source": "tranco#76403"
+  },
+  {
+   "domain": "ranobes.com",
+   "category": "longtail",
+   "source": "tranco#77215"
+  },
+  {
+   "domain": "bngprm.com",
+   "category": "longtail",
+   "source": "tranco#37908"
+  },
+  {
+   "domain": "pron.click",
+   "category": "longtail",
+   "source": "tranco#20613"
+  },
+  {
+   "domain": "gfgtech.com",
+   "category": "longtail",
+   "source": "tranco#29578"
+  },
+  {
+   "domain": "2390437.xyz",
+   "category": "longtail",
+   "source": "tranco#52946"
+  },
+  {
+   "domain": "biontech.de",
+   "category": "longtail",
+   "source": "tranco#78179"
+  },
+  {
+   "domain": "erogarga.com",
+   "category": "longtail",
+   "source": "tranco#22400"
+  },
+  {
+   "domain": "eromecdn.com",
+   "category": "longtail",
+   "source": "tranco#11988"
+  },
+  {
+   "domain": "staysee.jp",
+   "category": "longtail",
+   "source": "tranco#94564"
+  },
+  {
+   "domain": "avansas.com",
+   "category": "longtail",
+   "source": "tranco#61187"
+  },
+  {
+   "domain": "chuckecheese.com",
+   "category": "longtail",
+   "source": "tranco#55820"
+  },
+  {
+   "domain": "pocketfm.com",
+   "category": "longtail",
+   "source": "tranco#6919"
+  },
+  {
+   "domain": "vinted.lt",
+   "category": "longtail",
+   "source": "tranco#10091"
+  },
+  {
+   "domain": "xxxshake.com",
+   "category": "longtail",
+   "source": "tranco#52134"
+  },
+  {
+   "domain": "svb.nl",
+   "category": "longtail",
+   "source": "tranco#65045"
+  },
+  {
+   "domain": "theforage.com",
+   "category": "longtail",
+   "source": "tranco#46707"
+  },
+  {
+   "domain": "brlbet666.com",
+   "category": "longtail",
+   "source": "tranco#92604"
+  },
+  {
+   "domain": "evocdn.net",
+   "category": "longtail",
+   "source": "tranco#44150"
+  },
+  {
+   "domain": "voltaxam.com",
+   "category": "longtail",
+   "source": "tranco#10205"
+  },
+  {
+   "domain": "victorywithash.com",
+   "category": "longtail",
+   "source": "tranco#24879"
+  },
+  {
+   "domain": "rupiahcepatweb.com",
+   "category": "longtail",
+   "source": "tranco#64092"
+  },
+  {
+   "domain": "fusion-platform.com",
+   "category": "longtail",
+   "source": "tranco#8723"
+  },
+  {
+   "domain": "malaysia.gov.my",
+   "category": "longtail",
+   "source": "tranco#75335"
+  },
+  {
+   "domain": "blogflux.com",
+   "category": "longtail",
+   "source": "tranco#78276"
+  },
+  {
+   "domain": "newauction.org",
+   "category": "longtail",
+   "source": "tranco#49575"
+  },
+  {
+   "domain": "goerie.com",
+   "category": "longtail",
+   "source": "tranco#50654"
+  },
+  {
+   "domain": "sankuai.com",
+   "category": "longtail",
+   "source": "tranco#5468"
+  },
+  {
+   "domain": "chipy.com",
+   "category": "longtail",
+   "source": "tranco#58087"
+  },
+  {
+   "domain": "airnewzealand.com",
+   "category": "longtail",
+   "source": "tranco#35402"
+  },
+  {
+   "domain": "bafin.de",
+   "category": "longtail",
+   "source": "tranco#20999"
+  },
+  {
+   "domain": "vertumotors.com",
+   "category": "longtail",
+   "source": "tranco#59803"
+  },
+  {
+   "domain": "777tiger888.com",
+   "category": "longtail",
+   "source": "tranco#89616"
+  },
+  {
+   "domain": "list.ru",
+   "category": "longtail",
+   "source": "tranco#41434"
+  },
+  {
+   "domain": "sprintlink.net",
+   "category": "longtail",
+   "source": "tranco#78779"
+  },
+  {
+   "domain": "stjohnslabs.com",
+   "category": "longtail",
+   "source": "tranco#47999"
+  },
+  {
+   "domain": "eventful.com",
+   "category": "longtail",
+   "source": "tranco#76953"
+  },
+  {
+   "domain": "aucorsa.es",
+   "category": "longtail",
+   "source": "tranco#91025"
+  },
+  {
+   "domain": "devpost.com",
+   "category": "longtail",
+   "source": "tranco#13110"
+  },
+  {
+   "domain": "deltaexecutor.com.br",
+   "category": "longtail",
+   "source": "tranco#98269"
+  },
+  {
+   "domain": "1miba.com",
+   "category": "longtail",
+   "source": "tranco#67653"
+  },
+  {
+   "domain": "bybdc6.com",
+   "category": "longtail",
+   "source": "tranco#20121"
+  },
+  {
+   "domain": "gehu.ac.in",
+   "category": "longtail",
+   "source": "tranco#90052"
+  },
+  {
+   "domain": "ehub.cz",
+   "category": "longtail",
+   "source": "tranco#73056"
+  },
+  {
+   "domain": "scrippsdigital.com",
+   "category": "longtail",
+   "source": "tranco#78721"
+  },
+  {
+   "domain": "virusfree.cz",
+   "category": "longtail",
+   "source": "tranco#37057"
+  },
+  {
+   "domain": "vikingcruises.com",
+   "category": "longtail",
+   "source": "tranco#44996"
+  },
+  {
+   "domain": "germansextube.biz",
+   "category": "longtail",
+   "source": "tranco#84798"
+  },
+  {
+   "domain": "kehakiman.gov.my",
+   "category": "longtail",
+   "source": "tranco#67344"
+  },
+  {
+   "domain": "amul.in",
+   "category": "longtail",
+   "source": "tranco#89977"
+  },
+  {
+   "domain": "gsmpunt.nl",
+   "category": "longtail",
+   "source": "tranco#65030"
+  },
+  {
+   "domain": "roulettino-casino.net",
+   "category": "longtail",
+   "source": "tranco#40279"
+  },
+  {
+   "domain": "webme.it",
+   "category": "longtail",
+   "source": "tranco#26893"
+  },
+  {
+   "domain": "auctionzip.com",
+   "category": "longtail",
+   "source": "tranco#35023"
+  },
+  {
+   "domain": "surfer.at",
+   "category": "longtail",
+   "source": "tranco#82652"
+  },
+  {
+   "domain": "ratbv.ro",
+   "category": "longtail",
+   "source": "tranco#98277"
+  },
+  {
+   "domain": "yespornpleasexxx.com",
+   "category": "longtail",
+   "source": "tranco#69791"
+  },
+  {
+   "domain": "vbs-hobby.com",
+   "category": "longtail",
+   "source": "tranco#76239"
+  },
+  {
+   "domain": "hungmobile.vn",
+   "category": "longtail",
+   "source": "tranco#87554"
+  },
+  {
+   "domain": "trustberrie.com",
+   "category": "longtail",
+   "source": "tranco#37997"
+  },
+  {
+   "domain": "truthdig.com",
+   "category": "longtail",
+   "source": "tranco#39270"
+  },
+  {
+   "domain": "bemparana.com.br",
+   "category": "longtail",
+   "source": "tranco#73669"
+  },
+  {
+   "domain": "cdn-go.cn",
+   "category": "longtail",
+   "source": "tranco#20189"
+  },
+  {
+   "domain": "backmarket.it",
+   "category": "longtail",
+   "source": "tranco#61319"
+  },
+  {
+   "domain": "simpleescort.com.ec",
+   "category": "longtail",
+   "source": "tranco#94471"
+  },
+  {
+   "domain": "tz.de",
+   "category": "longtail",
+   "source": "tranco#15505"
+  },
+  {
+   "domain": "fluencyinc.co",
+   "category": "longtail",
+   "source": "tranco#49105"
+  },
+  {
+   "domain": "atlasedu.com.br",
+   "category": "longtail",
+   "source": "tranco#81110"
+  },
+  {
+   "domain": "ng.ru",
+   "category": "longtail",
+   "source": "tranco#18454"
+  },
+  {
+   "domain": "earth.li",
+   "category": "longtail",
+   "source": "tranco#49329"
+  },
+  {
+   "domain": "mail.microsoft",
+   "category": "longtail",
+   "source": "tranco#10931"
+  },
+  {
+   "domain": "maps.org",
+   "category": "longtail",
+   "source": "tranco#60223"
+  },
+  {
+   "domain": "moleskine.com",
+   "category": "longtail",
+   "source": "tranco#44014"
+  },
+  {
+   "domain": "slobodna-bosna.ba",
+   "category": "longtail",
+   "source": "tranco#51736"
+  },
+  {
+   "domain": "otherconnectius.com",
+   "category": "longtail",
+   "source": "tranco#63146"
+  },
+  {
+   "domain": "avanan.click",
+   "category": "longtail",
+   "source": "tranco#36771"
+  },
+  {
+   "domain": "playtube.co.za",
+   "category": "longtail",
+   "source": "tranco#88321"
+  },
+  {
+   "domain": "pmuy.gov.in",
+   "category": "longtail",
+   "source": "tranco#78962"
+  },
+  {
+   "domain": "oastify.com",
+   "category": "longtail",
+   "source": "tranco#69425"
+  },
+  {
+   "domain": "stockholmresilience.org",
+   "category": "longtail",
+   "source": "tranco#52309"
+  },
+  {
+   "domain": "tributecenteronline.com",
+   "category": "longtail",
+   "source": "tranco#48888"
+  },
+  {
+   "domain": "0555528.com",
+   "category": "longtail",
+   "source": "tranco#98817"
+  },
+  {
+   "domain": "demonoid.ch",
+   "category": "longtail",
+   "source": "tranco#25094"
+  },
+  {
+   "domain": "lacoste.co.za",
+   "category": "longtail",
+   "source": "tranco#87977"
+  },
+  {
+   "domain": "crushie.ai",
+   "category": "longtail",
+   "source": "tranco#47996"
+  },
+  {
+   "domain": "guykawasaki.com",
+   "category": "longtail",
+   "source": "tranco#73782"
+  },
+  {
+   "domain": "mobilityscootersdirect.com",
+   "category": "longtail",
+   "source": "tranco#44406"
+  },
+  {
+   "domain": "jobgether.com",
+   "category": "longtail",
+   "source": "tranco#96978"
+  },
+  {
+   "domain": "genworth.com",
+   "category": "longtail",
+   "source": "tranco#69707"
+  },
+  {
+   "domain": "oas.org",
+   "category": "longtail",
+   "source": "tranco#12948"
+  },
+  {
+   "domain": "arrayent.com",
+   "category": "longtail",
+   "source": "tranco#34114"
+  },
+  {
+   "domain": "insiderstore.com.br",
+   "category": "longtail",
+   "source": "tranco#68274"
+  },
+  {
+   "domain": "outsideapi.com",
+   "category": "longtail",
+   "source": "tranco#76825"
+  },
+  {
+   "domain": "comparably.com",
+   "category": "longtail",
+   "source": "tranco#29438"
+  },
+  {
+   "domain": "orange-book.com",
+   "category": "longtail",
+   "source": "tranco#72442"
+  },
+  {
+   "domain": "replicate.com",
+   "category": "longtail",
+   "source": "tranco#27765"
+  },
+  {
+   "domain": "familytreenow.com",
+   "category": "longtail",
+   "source": "tranco#27211"
+  },
+  {
+   "domain": "ucw.cz",
+   "category": "longtail",
+   "source": "tranco#95903"
+  },
+  {
+   "domain": "1c.eu",
+   "category": "longtail",
+   "source": "tranco#33186"
+  },
+  {
+   "domain": "gntykwyqra.net",
+   "category": "longtail",
+   "source": "tranco#80697"
+  },
+  {
+   "domain": "storyteller.ai",
+   "category": "longtail",
+   "source": "tranco#30941"
+  },
+  {
+   "domain": "anjcdn.org",
+   "category": "longtail",
+   "source": "tranco#24967"
+  },
+  {
+   "domain": "myflixer.win",
+   "category": "longtail",
+   "source": "tranco#80475"
+  },
+  {
+   "domain": "lareferencia.info",
+   "category": "longtail",
+   "source": "tranco#68620"
+  }
+ ]
+}

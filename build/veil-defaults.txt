@@ -1,0 +1,16 @@
+! Title: Veil defaults
+! Description: Generic anti-adblock mitigations shipped with Veil. Nothing here names a publisher;
+! every rule substitutes a neutral stub for a library that detectors load to probe for a blocker.
+! The same rules exist in AdGuard Base (adsbygoogle) and uBO filters (fuckadblock/blockadblock).
+! License: MIT
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xhr,redirect=googlesyndication_adsbygoogle.js
+||googletagservices.com/tag/js/gpt.js$script,redirect=googletagservices_gpt.js
+||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js
+||www.google-analytics.com/analytics.js$script,redirect=google-analytics_analytics.js
+||www.googletagmanager.com/gtm.js$script,redirect=googletagmanager_gtm.js
+*/fuckadblock.$script,redirect=fuckadblock.js-3.2.0
+*/fuckadblock-$script,redirect=fuckadblock.js-3.2.0
+*/blockadblock.$script,redirect=fuckadblock.js-3.2.0
+*/blockadblock-$script,redirect=fuckadblock.js-3.2.0
+*/prebid-ads.js$script,redirect=prebid-ads.js
+*/ads.js$script,1p,redirect=prebid-ads.js

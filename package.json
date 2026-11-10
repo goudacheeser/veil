@@ -1,0 +1,22 @@
+{
+  "name": "veil",
+  "version": "0.1.0",
+  "description": "Open-source MV3 content blocker with a full ABP/uBO filter engine",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "fetch-lists": "node build/fetch-lists.js",
+    "build": "node build/build.js",
+    "test": "node --test test/",
+    "bench": "node bench/run.js",
+    "bench:install": "node bench/install.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@puppeteer/browsers": "^2.13.0",
+    "puppeteer-core": "^24.37.2"
+  }
+}
