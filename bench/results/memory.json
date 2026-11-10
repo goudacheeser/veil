@@ -1,0 +1,180 @@
+{
+ "tabCounts": [
+  10,
+  50,
+  200
+ ],
+ "results": {
+  "none": {
+   "idle": {
+    "processes": 10,
+    "totalPrivateMB": 295,
+    "totalWorkingSetMB": 531,
+    "extensionProcessPrivateMB": 0,
+    "extensionProcessCpuMs": 0,
+    "totalCpuMs": 2969
+   },
+   "tabs10": {
+    "processes": 20,
+    "totalPrivateMB": 684,
+    "totalWorkingSetMB": 1266,
+    "extensionProcessPrivateMB": 0,
+    "extensionProcessCpuMs": 0,
+    "totalCpuMs": 6250
+   },
+   "tabs50": {
+    "processes": 60,
+    "totalPrivateMB": 2118,
+    "totalWorkingSetMB": 4094,
+    "extensionProcessPrivateMB": 0,
+    "extensionProcessCpuMs": 0,
+    "totalCpuMs": 17031
+   },
+   "tabs200": {
+    "processes": 210,
+    "totalPrivateMB": 7349,
+    "totalWorkingSetMB": 14786,
+    "extensionProcessPrivateMB": 0,
+    "extensionProcessCpuMs": 0,
+    "totalCpuMs": 64563
+   }
+  },
+  "veil": {
+   "idle": {
+    "processes": 11,
+    "totalPrivateMB": 374,
+    "totalWorkingSetMB": 647,
+    "extensionProcessPrivateMB": 32,
+    "extensionProcessCpuMs": 234,
+    "totalCpuMs": 5141
+   },
+   "tabs10": {
+    "processes": 21,
+    "totalPrivateMB": 773,
+    "totalWorkingSetMB": 1428,
+    "extensionProcessPrivateMB": 37,
+    "extensionProcessCpuMs": 297,
+    "totalCpuMs": 9078
+   },
+   "tabs50": {
+    "processes": 61,
+    "totalPrivateMB": 2287,
+    "totalWorkingSetMB": 4474,
+    "extensionProcessPrivateMB": 39,
+    "extensionProcessCpuMs": 391,
+    "totalCpuMs": 21531
+   },
+   "tabs200": {
+    "processes": 211,
+    "totalPrivateMB": 7887,
+    "totalWorkingSetMB": 15909,
+    "extensionProcessPrivateMB": 35,
+    "extensionProcessCpuMs": 734,
+    "totalCpuMs": 72969
+   }
+  },
+  "ubol": {
+   "idle": {
+    "processes": 10,
+    "totalPrivateMB": 403,
+    "totalWorkingSetMB": 662,
+    "extensionProcessPrivateMB": 53,
+    "extensionProcessCpuMs": 250,
+    "totalCpuMs": 4750
+   },
+   "tabs10": {
+    "processes": 20,
+    "totalPrivateMB": 857,
+    "totalWorkingSetMB": 1530,
+    "extensionProcessPrivateMB": 53,
+    "extensionProcessCpuMs": 281,
+    "totalCpuMs": 9984
+   },
+   "tabs50": {
+    "processes": 60,
+    "totalPrivateMB": 2614,
+    "totalWorkingSetMB": 4859,
+    "extensionProcessPrivateMB": 53,
+    "extensionProcessCpuMs": 281,
+    "totalCpuMs": 24672
+   },
+   "tabs200": {
+    "processes": 209,
+    "totalPrivateMB": 9024,
+    "totalWorkingSetMB": 17374,
+    "extensionProcessPrivateMB": 0,
+    "extensionProcessCpuMs": 0,
+    "totalCpuMs": 86625
+   }
+  },
+  "adguard": {
+   "idle": {
+    "processes": 12,
+    "totalPrivateMB": 1228,
+    "totalWorkingSetMB": 1587,
+    "extensionProcessPrivateMB": 702,
+    "extensionProcessCpuMs": 5719,
+    "totalCpuMs": 15234
+   },
+   "tabs10": {
+    "processes": 23,
+    "totalPrivateMB": 1637,
+    "totalWorkingSetMB": 2444,
+    "extensionProcessPrivateMB": 700,
+    "extensionProcessCpuMs": 6000,
+    "totalCpuMs": 19859
+   },
+   "tabs50": {
+    "processes": 63,
+    "totalPrivateMB": 2969,
+    "totalWorkingSetMB": 5394,
+    "extensionProcessPrivateMB": 377,
+    "extensionProcessCpuMs": 6891,
+    "totalCpuMs": 37859
+   },
+   "tabs200": {
+    "processes": 212,
+    "totalPrivateMB": 8797,
+    "totalWorkingSetMB": 17569,
+    "extensionProcessPrivateMB": 199,
+    "extensionProcessCpuMs": 10000,
+    "totalCpuMs": 117359
+   }
+  },
+  "ghostery": {
+   "idle": {
+    "processes": 11,
+    "totalPrivateMB": 601,
+    "totalWorkingSetMB": 909,
+    "extensionProcessPrivateMB": 242,
+    "extensionProcessCpuMs": 2578,
+    "totalCpuMs": 13656
+   },
+   "tabs10": {
+    "processes": 21,
+    "totalPrivateMB": 1370,
+    "totalWorkingSetMB": 2184,
+    "extensionProcessPrivateMB": 338,
+    "extensionProcessCpuMs": 6922,
+    "totalCpuMs": 37766
+   },
+   "tabs50": {
+    "processes": 61,
+    "totalPrivateMB": 4015,
+    "totalWorkingSetMB": 6633,
+    "extensionProcessPrivateMB": 307,
+    "extensionProcessCpuMs": 19813,
+    "totalCpuMs": 105391
+   },
+   "tabs200": {
+    "processes": 209,
+    "totalPrivateMB": 11059,
+    "totalWorkingSetMB": 19887,
+    "extensionProcessPrivateMB": 432,
+    "extensionProcessCpuMs": 62344,
+    "totalCpuMs": 304984
+   }
+  }
+ },
+ "note": "same local page in every tab; all tabs share one renderer per site so content-script memory lands in that renderer; extension process = service worker + extension pages"
+}

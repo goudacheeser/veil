@@ -245,6 +245,7 @@ async function handle(msg) {
         await syncDynamicRules(); await syncContentScripts();
         return !set.has(msg.hostname);
       }
+      case 'bench': await loadSettings(); settings.benchmark = !!msg.on; return true;
       case 'benchReport': benchStats.set(msg.url, msg.stats); return true;
       case 'benchStats': return benchStats.get(msg.url) || [...benchStats.entries()].find(([k]) => k.startsWith(msg.url.replace(/[/]$/, '')))?.[1] || null;
       case 'siteState': { await loadSettings(); return { enabled: !siteDisabled(msg.hostname) }; }

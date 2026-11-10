@@ -1,6 +1,6 @@
 # Results
 
-Generated 2026-11-10T00:13Z by `bench/report.js`. Every number below comes from a file under `bench/results/`; raw per-request data is under `bench/results/raw/<run>/`.
+Generated 2026-11-10T06:09Z by `bench/report.js`. Every number below comes from a file under `bench/results/`; raw per-request data is under `bench/results/raw/<run>/`.
 
 ## Setup
 
@@ -12,24 +12,68 @@ Generated 2026-11-10T00:13Z by `bench/report.js`. Every number below comes from 
 
 ## 1. Blocking coverage
 
-### Run `smoke` (3 paired sites of 4)
+### Run `batchA-chrome` (449 paired sites of 500)
 
 | config | requests seen | ad/tracker requests | blocked | redirected | let through (false negatives) | of which third-party | coverage | non-ad requests blocked |
 |---|---|---|---|---|---|---|---|---|
-| none | 384 | 357 | 0 | 0 | 356 | 151 | 0% | 0 |
-| veil | 295 | 275 | 38 | 5 | 237 | 39 | 13.8% | 1 |
+| none | 73591 | 24334 | 30 | 0 | 23985 | 22789 | 0.1% | 18 |
+| veil | 50292 | 5623 | 5017 | 550 | 575 | 538 | 89.2% | 199 |
+| ubol | 50065 | 5857 | 4856 | 652 | 972 | 919 | 82.9% | 371 |
+| adguard | 59250 | 12713 | 2330 | 67 | 10307 | 9247 | 18.3% | 750 |
+| ghostery | 50555 | 5436 | 4727 | 596 | 661 | 604 | 87% | 410 |
 
-| category | none | veil |
-|---|---|---|
-| news | 0% (0/357) | 13.8% (38/275) |
-| video | - | - |
-| shopping | - | - |
-| social | - | - |
-| longtail | - | - |
+| category | none | veil | ubol | adguard | ghostery |
+|---|---|---|---|---|---|
+| news | 0% (0/10339) | 89.4% (1598/1787) | 81.7% (1592/1949) | 19.9% (1051/5284) | 87% (1702/1956) |
+| video | 0.1% (4/6008) | 81.8% (656/802) | 80.6% (649/805) | 21.4% (403/1885) | 81.9% (657/802) |
+| shopping | 0.6% (22/3640) | 94.7% (1734/1832) | 84.6% (1637/1936) | 13.6% (441/3242) | 89.9% (1411/1569) |
+| social | 0.1% (1/1144) | 93% (278/299) | 92.2% (273/296) | 16% (84/524) | 94.4% (304/322) |
+| longtail | 0.1% (3/3203) | 83.2% (751/903) | 80.9% (705/871) | 19.7% (351/1778) | 83% (653/787) |
 
 False negatives by host (top 10):
 
-* **veil**: static.foxnews.com (91), www.cnn.com (33), media.cnn.com (28), a57.foxnews.com (27), global.ketchcdn.com (10), default.any-any.prd.api.bolt.cnn.com (6), player.h-cdn.com (5), fonts.gstatic.com (3), assets.foxnews.com (3), my.foxnews.com (3)
+* **veil**: geolocation.onetrust.com (73), global.ketchcdn.com (53), asset.fwcdn3.com (46), cdn.cookielaw.org (45), news.google.com (28), cdn-au.onetrust.com (26), cmp.osano.com (19), geo.privacymanager.io (15), static.addtoany.com (14), cdn-ukwest.onetrust.com (12)
+* **ubol**: tags.tiqcdn.com (95), geolocation.onetrust.com (77), siteintercept.qualtrics.com (63), global.ketchcdn.com (51), cdn.cookielaw.org (46), asset.fwcdn3.com (45), 0.stg.pick.frostplant.me (40), news.google.com (33), cdn-ukwest.onetrust.com (30), cdn-au.onetrust.com (29)
+* **adguard**: www.googletagmanager.com (741), www.google.com (516), connect.facebook.net (206), analytics.google.com (196), www.google-analytics.com (185), events.newsroom.bi (181), tags.tiqcdn.com (170), assets.adobedtm.com (167), gm.mmstat.com (160), bam.nr-data.net (159)
+* **ghostery**: geolocation.onetrust.com (60), cdn.cookielaw.org (46), asset.fwcdn3.com (45), news.google.com (33), cdn-ukwest.onetrust.com (29), cmp.osano.com (19), 0.pick.frostplant.me (18), cdn-au.onetrust.com (15), tags.tiqcdn.com (14), static.addtoany.com (14)
+
+### Run `batchB-brave` (451 paired sites of 500)
+
+| config | requests seen | ad/tracker requests | blocked | redirected | let through (false negatives) | of which third-party | coverage | non-ad requests blocked |
+|---|---|---|---|---|---|---|---|---|
+| brave-none | 71444 | 23789 | 10 | 0 | 23406 | 22346 | 0% | 23 |
+| brave | 49634 | 5494 | 3603 | 0 | 1869 | 1011 | 65.6% | 320 |
+
+| category | brave-none | brave |
+|---|---|---|
+| news | 0% (0/10803) | 67.8% (1447/2135) |
+| video | 0.1% (4/5134) | 61.8% (407/659) |
+| shopping | 0.1% (2/3250) | 65.4% (1128/1724) |
+| social | 0.1% (1/1142) | 67.4% (186/276) |
+| longtail | 0.1% (3/3460) | 62.1% (435/700) |
+
+False negatives by host (top 10):
+
+* **brave**: www.googletagmanager.com (308), securepubads.g.doubleclick.net (92), aplus.aliexpress.us (52), www.wish.com (52), static.chartbeat.com (50), siteintercept.qualtrics.com (48), asset.fwcdn3.com (45), pagead2.googlesyndication.com (39), c.amazon-adsystem.com (33), news.google.com (32)
+
+### Run `batchC-chrome126` (443 paired sites of 383)
+
+| config | requests seen | ad/tracker requests | blocked | redirected | let through (false negatives) | of which third-party | coverage | non-ad requests blocked |
+|---|---|---|---|---|---|---|---|---|
+| none126 | 82771 | 27993 | 12 | 0 | 25407 | 24357 | 0% | 78 |
+| ubo | 53198 | 5438 | 4537 | 609 | 857 | 815 | 83.4% | 384 |
+
+| category | none126 | ubo |
+|---|---|---|
+| news | 0% (0/14208) | 84.9% (1594/1877) |
+| video | 0.1% (5/5701) | 77.4% (651/841) |
+| shopping | 0.1% (3/3413) | 85.3% (1422/1668) |
+| social | 0.1% (1/970) | 93% (226/243) |
+| longtail | 0.1% (3/3701) | 79.6% (644/809) |
+
+False negatives by host (top 10):
+
+* **ubo**: geolocation.onetrust.com (70), tags.tiqcdn.com (54), siteintercept.qualtrics.com (47), global.ketchcdn.com (46), asset.fwcdn3.com (46), cdn.cookielaw.org (40), news.google.com (33), cdn-au.onetrust.com (31), cdn-ukwest.onetrust.com (30), ad.doubleclick.net (22)
 
 "Coverage" is blocked ÷ ad requests observed with that blocker installed. Third-party false negatives are the ones that matter most for tracking; first-party ones are mostly first-party analytics endpoints and ad-slot CSS on the publisher's own CDN.
 
@@ -39,11 +83,148 @@ Heuristic, relative to the no-blocker load of the same site in the same batch (t
 
 | config | run | candidates | % of paired sites |
 |---|---|---|---|
-| veil | smoke | 1 | 33.3% |
+| veil | batchA-chrome | 21 | 4.7% |
+| ubol | batchA-chrome | 18 | 4% |
+| adguard | batchA-chrome | 16 | 3.6% |
+| ghostery | batchA-chrome | 19 | 4.2% |
+| brave | batchB-brave | 17 | 3.8% |
+| ubo | batchC-chrome126 | 17 | 3.8% |
 
-<details><summary>veil (smoke) candidate list</summary>
+<details><summary>veil (batchA-chrome) candidate list</summary>
 
+* 4anime.gg (video): empty body
+* anime.nexus (longtail): text 16065→285
+* banggood.com (shopping): js errors 0→13
+* behance.net (social): js errors 0→8
+* bild.de (news): text 20746→1414
+* dailymail.co.uk (news): login link gone; comment section gone
+* deviantart.com (social): text 12598→406; login link gone
+* fandom.com (social): js errors 0→7
+* foxnews.com (news): js errors 1→8
+* goerie.com (longtail): js errors 0→5
+* iheart.com (video): video not playable
+* kohls.com (shopping): text 21540→195; login link gone
+* next.co.uk (shopping): video not playable
+* nordstrom.com (shopping): js errors 0→10
+* ranobes.com (longtail): text 2241→80; login link gone; comment section gone
+* sfgate.com (news): login link gone
+* telegraph.co.uk (news): text 2714→0; empty body; login link gone
+* theguardian.com (news): js errors 0→19
+* uol.com.br (news): login link gone
+* youtube.com (video): login link gone
+* zhihu.com (social): js errors 0→12
+
+</details>
+
+<details><summary>ubol (batchA-chrome) candidate list</summary>
+
+* 4anime.gg (video): empty body
+* anime.nexus (longtail): text 16065→285
+* banggood.com (shopping): js errors 0→15
+* behance.net (social): js errors 0→8
+* cabelas.com (shopping): empty body
+* dailymail.co.uk (news): login link gone; comment section gone
+* deviantart.com (social): text 12598→406; login link gone
+* fandom.com (social): js errors 0→7
 * foxnews.com (news): js errors 1→7
+* next.co.uk (shopping): video not playable
+* nordstrom.com (shopping): js errors 0→8
+* rumble.com (video): text 3920→426; video not playable
+* sfgate.com (news): login link gone
+* telegraph.co.uk (news): text 2714→0; empty body; login link gone
+* theguardian.com (news): js errors 0→18
+* underarmour.com (shopping): js errors 0→6
+* uol.com.br (news): login link gone
+* zhihu.com (social): js errors 0→11
+
+</details>
+
+<details><summary>adguard (batchA-chrome) candidate list</summary>
+
+* 4anime.gg (video): empty body
+* axios.com (news): js errors 0→7
+* bild.de (news): text 20746→1414
+* bsky.app (social): text 11210→4357
+* cabelas.com (shopping): empty body
+* dailymail.co.uk (news): login link gone; comment section gone
+* g2a.com (shopping): empty body
+* huffpost.com (news): js errors 0→29
+* linkedin.com (social): text 2775→130; login link gone
+* ranobes.com (longtail): text 2241→80; login link gone; comment section gone
+* rumble.com (video): text 3920→426; video not playable
+* sfgate.com (news): login link gone
+* telegraph.co.uk (news): text 2714→0; empty body; login link gone
+* underarmour.com (shopping): video not playable
+* uol.com.br (news): login link gone
+* youtube.com (video): login link gone
+
+</details>
+
+<details><summary>ghostery (batchA-chrome) candidate list</summary>
+
+* 4anime.gg (video): empty body
+* banggood.com (shopping): js errors 0→15
+* behance.net (social): js errors 0→8
+* bsky.app (social): text 11210→4357
+* fandom.com (social): js errors 0→7
+* foxnews.com (news): js errors 1→9
+* g2a.com (shopping): empty body
+* iheart.com (video): video not playable
+* nordstrom.com (shopping): js errors 0→10
+* rmg.co.uk (longtail): login link gone
+* rumble.com (video): text 3920→15; video not playable
+* sfgate.com (news): login link gone
+* spiegel.de (news): js errors 0→5
+* telegram.org (social): video not playable
+* telegraph.co.uk (news): text 2714→0; empty body; login link gone
+* theguardian.com (news): js errors 0→15
+* uol.com.br (news): login link gone
+* welt.de (news): js errors 0→19
+* zhihu.com (social): js errors 0→12
+
+</details>
+
+<details><summary>brave (batchB-brave) candidate list</summary>
+
+* 4anime.gg (video): empty body
+* abcnews.go.com (news): comment section gone
+* behance.net (social): js errors 0→7
+* comparably.com (longtail): text 3454→134; login link gone; comment section gone
+* dailymail.co.uk (news): empty body
+* elpais.com (news): text 21703→0; login link gone
+* fandom.com (social): js errors 0→7
+* kroger.com (shopping): empty body; login link gone
+* lanacion.com.ar (news): video not playable
+* nbcnews.com (news): js errors 2→21
+* odysee.com (video): comment section gone
+* ok.ru (video): js errors 0→14
+* rmg.co.uk (longtail): login link gone
+* scmp.com (news): text 20504→7044; login link gone
+* sfgate.com (news): login link gone
+* uol.com.br (news): login link gone
+* vudu.com (video): text 4862→368
+
+</details>
+
+<details><summary>ubo (batchC-chrome126) candidate list</summary>
+
+* 4anime.gg (video): empty body
+* banggood.com (shopping): js errors 0→9
+* behance.net (social): js errors 0→8
+* bild.de (news): text 20729→1414
+* deviantart.com (social): text 13390→406; login link gone
+* fandom.com (social): js errors 0→8
+* foxnews.com (news): js errors 1→6
+* gamesradar.com (video): text 8888→0; empty body; comment section gone
+* imdb.com (video): login link gone
+* kohls.com (shopping): empty body; login link gone
+* kroger.com (shopping): text 3159→0; empty body; login link gone
+* pcgamer.com (video): text 13671→0; empty body; comment section gone
+* peacocktv.com (video): login link gone
+* scmp.com (news): text 21198→7308; login link gone
+* telegraph.co.uk (news): js errors 1→11
+* theguardian.com (news): js errors 0→20
+* zhihu.com (social): js errors 0→9
 
 </details>
 
@@ -53,8 +234,15 @@ Heuristic, relative to the no-blocker load of the same site in the same batch (t
 
 | config | run | median | p95 | Δ median vs that batch's baseline | JS errors | loads that failed |
 |---|---|---|---|---|---|---|
-| none | smoke | 7663 | 13250 | 0 | 1 | 1 |
-| veil | smoke | 7589 | 8621 | -73 | 7 | 1 |
+| none | batchA-chrome | 8359 | 23574 | 0 | 348 | 48 |
+| veil | batchA-chrome | 5786 | 16020 | -2573 | 402 | 48 |
+| ubol | batchA-chrome | 5784 | 16622 | -2575 | 419 | 48 |
+| adguard | batchA-chrome | 7437 | 20316 | -921 | 380 | 48 |
+| ghostery | batchA-chrome | 6601 | 18130 | -1758 | 427 | 46 |
+| brave-none | batchB-brave | 3344 | 18448 | 0 | 282 | 46 |
+| brave | batchB-brave | 2766 | 13639 | -578 | 374 | 48 |
+| none126 | batchC-chrome126 | 3143 | 13603 | 0 | 330 | 52 |
+| ubo | batchC-chrome126 | 2381 | 11719 | -762 | 380 | 53 |
 
 Load times are dominated by the sites themselves and by whether ads were blocked (blocking usually makes pages faster); the Δ column is the honest signal and still has run-to-run noise of tens of milliseconds.
 
@@ -62,26 +250,38 @@ Load times are dominated by the sites themselves and by whether ads were blocked
 
 | decisions | per-decision median | p95 | p99 | open network index (11.5 MB) | open cosmetic index (1.9 MB) | cosmetic hostname lookup median | generic lookup (20 classes) median |
 |---|---|---|---|---|---|---|---|
-| 20383 real URLs | 50.6 µs | 118.6 µs | 214.1 µs | 6.9 ms (+7.94 ms read) | 1.17 ms (+1.91 ms read) | 45.5 µs | 2.2 µs |
+| 74678 real URLs | 25.4 µs | 78 µs | 107.2 µs | 2.81 ms (+11.24 ms read) | 0.44 ms (+2.74 ms read) | 10.5 µs | 1.9 µs |
 
 The 2 ms per-decision target is met by two orders of magnitude for the JS matcher. Live request decisions are made by Chromium's declarativeNetRequest engine, whose per-request cost is not observable from an extension; it is the same engine uBO Lite and AdGuard MV3 use.
+
+### Memory and CPU at 10 / 50 / 200 tabs (`bench/memory.js`, identical local page in every tab)
+
+| config | idle: private MB total (extension process) | tabs10: private MB total (extension process) | tabs50: private MB total (extension process) | tabs200: private MB total (extension process) | CPU ms total at max tabs (extension process) |
+|---|---|---|---|---|---|
+| none | 295 (0) | 684 (0) | 2118 (0) | 7349 (0) | 64563 (0) |
+| veil | 374 (32) | 773 (37) | 2287 (39) | 7887 (35) | 72969 (734) |
+| ubol | 403 (53) | 857 (53) | 2614 (53) | 9024 (0) | 86625 (0) |
+| adguard | 1228 (702) | 1637 (700) | 2969 (377) | 8797 (199) | 117359 (10000) |
+| ghostery | 601 (242) | 1370 (338) | 4015 (307) | 11059 (432) | 304984 (62344) |
+
+same local page in every tab; all tabs share one renderer per site so content-script memory lands in that renderer; extension process = service worker + extension pages
 
 ## 4. Anti-adblock detection suite (`bench/antiadblock/run.js`)
 
 Seven detector techniques (BlockAdBlock bait element, adsbygoogle load check, /ads.js and prebid baits, fetch bait, FuckAdBlock callbacks, missing BlockAdBlock library) on a local page that loads real ad hostnames via host-resolver rules. DETECTED = the site would show a wall. `_bait` rows show whether the bait was actually blocked (a blocker that lets the bait through "passes" trivially).
 
-| detector | ubo |
-|---|---|
-| fetch-bait | passed |
-| bait-element | passed |
-| adsbygoogle-loaded | passed |
-| ads-js-bait | passed |
-| prebid-bait | passed |
-| fuckadblock | passed |
-| blockadblock-lib-missing | passed |
-| _bait: adsbygoogle.js fetched from network | loaded |
-| _bait: ads.js fetched from network | loaded |
-| _bait: blockadblock.js fetched from network | loaded |
+| detector | none | veil | ubol | adguard | ghostery | none126 | ubo | brave-none | brave |
+|---|---|---|---|---|---|---|---|---|---|
+| fetch-bait | passed | passed | passed | **DETECTED** | passed | passed | passed | passed | passed |
+| bait-element | passed | passed | passed | passed | passed | passed | passed | passed | passed |
+| adsbygoogle-loaded | passed | passed | passed | **DETECTED** | passed | passed | passed | passed | passed |
+| ads-js-bait | passed | passed | passed | passed | passed | passed | passed | passed | passed |
+| prebid-bait | passed | passed | passed | passed | passed | passed | passed | passed | passed |
+| fuckadblock | passed | passed | passed | passed | passed | passed | passed | passed | passed |
+| blockadblock-lib-missing | passed | passed | passed | passed | passed | passed | passed | passed | passed |
+| _bait: adsbygoogle.js fetched from network | loaded | stopped | stopped | stopped | loaded | loaded | stopped | loaded | stopped |
+| _bait: ads.js fetched from network | loaded | stopped | loaded | loaded | loaded | loaded | loaded | loaded | loaded |
+| _bait: blockadblock.js fetched from network | loaded | stopped | stopped | loaded | loaded | loaded | stopped | loaded | loaded |
 
 ## 5. Privacy
 
@@ -98,8 +298,9 @@ From `build/build-report.json` for the bundled list snapshot: 125844 network fil
 |---|---|---|
 | Blocking coverage (highest) | **veil** |  |
 | Third-party trackers let through (fewest) | **veil** |  |
-| Breakage candidates (fewest) | **veil** |  |
-| Page load median vs own baseline (largest speed-up) | **veil** |  |
-| Anti-adblock detectors passed (most) | **ubo** | Veil loses here |
+| Breakage candidates (fewest) | **adguard** | Veil loses here |
+| Page load median vs own baseline (largest speed-up) | **ubol** | Veil loses here |
+| Anti-adblock detectors passed (most) | **veil** |  |
+| Memory at most tabs (lowest total private bytes) | **veil** |  |
 
 Cross-batch comparisons (Chrome 157 vs Chrome 126 vs Brave) are indicative only; within a batch the sites, time window and network are shared.

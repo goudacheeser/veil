@@ -64,6 +64,21 @@ Competitor builds are downloaded from their official GitHub releases into `bench
 (checksums in `bench/competitors/SHA256SUMS`). uBO (MV2) is hosted in Chrome 126 (the last Chrome that
 runs MV2 unconditionally) with its own baseline, because Chrome 157 no longer runs MV2.
 
+## Results (summary; full tables in docs/RESULTS.md)
+
+500-site corpus, paired loads, requests judged by EasyList + EasyPrivacy + uBO + Fanboy/uBO annoyances compiled by Veil's own parser.
+
+| | coverage of ad/tracker requests | third-party trackers let through | breakage candidates (heuristic) | anti-adblock detectors passed (of 7) |
+|---|---|---|---|---|
+| **Veil** | **89.2 %** | **538** | 21 | **7** |
+| uBO Lite (Basic) | 82.9 % | 919 | 18 | 7 |
+| Ghostery | 87.0 % | 604 | 19 | 7 |
+| AdGuard MV3 (default: Tracking Protection off) | 18.3 % | 9,247 | 16 | 5 |
+| uBO 1.76 MV2 (Chrome 126 batch) | 83.4 % | 815 | 17 | 7 |
+| Brave Shields (Brave batch) | 65.6 % | 1,011 | 17 | 7 |
+
+Where Veil loses: breakage candidates (AdGuard fewest, uBO Lite fewer than Veil; after manual review in docs/BREAKAGE_REVIEW.md none of Veil's candidates is a confirmed Veil-specific functional break, two are unconfirmed) and page-load speed-up, where uBO Lite ties Veil within 2 ms. Engine: 25 µs median per decision on 74k real URLs; cosmetic index opens in under 1 ms after a worker restart.
+
 ## Honesty notes
 
 The results document reports every metric where Veil loses and names which competitor is strongest

@@ -69,12 +69,12 @@ length; a hash table answers it in ≤L exact lookups, also O(L), and L ≤ 8 fo
 hash table wins on constant factors in JavaScript (one `Math.imul` loop and a binary search over a
 contiguous `Uint32Array`, versus pointer chasing through node offsets), needs no node layout, and
 serialises to 4 bytes/key. The measured cost of a full cosmetic lookup for a hostname, including
-entity form and site flags, is ~40 µs median (`bench/results/microbench.json`). A trie would save
+entity form and site flags, is ~10 µs median (`bench/results/microbench.json`). A trie would save
 the ≤8 probes but not the string decode, which dominates.
 
 Sizes (current build): `core.cosmetic.bin` 1.9 MB (loaded on the first page of a worker
 lifetime), `core.network.bin` 11.5 MB (only when the logger or updater runs). Opening either is
-~2–8 ms: the reader only wraps views, it does not parse.
+under 3 ms: the reader only wraps views, it does not parse.
 
 ### Network records
 
@@ -86,7 +86,7 @@ at an unanchored edge), computed with a two-pass frequency count at compile time
 a usable token (regex filters, `$domain`-only filters) go into the always-tested bucket (`ANY_TOKEN`).
 
 Match procedure: tokenize URL (≤64 tokens) → scan block buckets, returning early on `$important`
-→ if blocked, scan exception buckets. Per-decision cost: median ~50 µs, p95 ~120 µs in Node on real
+→ if blocked, scan exception buckets. Per-decision cost: median 25 µs, p95 78 µs in Node on 74k real
 recorded request URLs (`bench/microbench.js`). This matters only for the logger; DNR decides live
 requests inside Chromium.
 

@@ -1,26 +1,26 @@
 {
- "decisions": 20383,
- "blockedByReference": 107,
- "readNetworkBinMs": 7.94,
- "openNetworkIndexMs": 6.9,
+ "decisions": 74678,
+ "blockedByReference": 24658,
+ "readNetworkBinMs": 11.24,
+ "openNetworkIndexMs": 2.81,
  "networkBinMB": 11.55,
- "readCosmeticBinMs": 1.91,
- "openCosmeticIndexMs": 1.17,
+ "readCosmeticBinMs": 2.74,
+ "openCosmeticIndexMs": 0.44,
  "cosmeticBinMB": 1.88,
  "perDecisionUs": {
-  "median": 50.6,
-  "p95": 118.6,
-  "p99": 214.1,
-  "mean": 63.96
+  "median": 25.4,
+  "p95": 78,
+  "p99": 107.2,
+  "mean": 34.24
  },
  "cosmeticHostLookupUs": {
-  "hosts": 5,
-  "median": 45.5,
-  "p95": 593.1
+  "hosts": 455,
+  "median": 10.5,
+  "p95": 26.9
  },
  "genericLookup20ClassesUs": {
-  "median": 2.2,
-  "p95": 7.2
+  "median": 1.9,
+  "p95": 4
  },
  "node": "v24.20.0"
 }

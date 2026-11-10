@@ -23,10 +23,15 @@ let k=0;setInterval(()=>{const d=document.createElement('span');d.className='dyn
 </script></body></html>`);
 const srv = await serve({ '*': pageDir }, 8089);
 
-function processes(userDataDir) {
-  const ps = execFileSync('powershell', ['-NoProfile', '-Command', `Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*${userDataDir.replace(/\\/g, '\\\\').replace(/'/g, "''")}*' } | ForEach-Object { $p = Get-Process -Id $_.ProcessId -ErrorAction SilentlyContinue; if ($p) { [pscustomobject]@{ pid=$_.ProcessId; ws=$p.WorkingSet64; pws=$p.PrivateMemorySize64; cpu=$p.TotalProcessorTime.TotalMilliseconds; cmd=$_.CommandLine } } } | ConvertTo-Json -Compress`], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+// Chrome child processes do not repeat --user-data-dir, so walk the process tree from the browser pid.
+function processes(rootPid) {
+  const ps = execFileSync('powershell', ['-NoProfile', '-Command', `Get-CimInstance Win32_Process | Where-Object { $_.Name -like 'chrome*' -or $_.Name -like 'brave*' } | ForEach-Object { $p = Get-Process -Id $_.ProcessId -ErrorAction SilentlyContinue; if ($p) { [pscustomobject]@{ pid=$_.ProcessId; ppid=$_.ParentProcessId; ws=$p.WorkingSet64; pws=$p.PrivateMemorySize64; cpu=$p.TotalProcessorTime.TotalMilliseconds; cmd=$_.CommandLine } } } | ConvertTo-Json -Compress`], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
   const arr = ps.trim() ? JSON.parse(ps) : [];
-  return Array.isArray(arr) ? arr : [arr];
+  const all = Array.isArray(arr) ? arr : [arr];
+  const keep = new Set([rootPid]);
+  let grew = true;
+  while (grew) { grew = false; for (const p of all) if (keep.has(p.ppid) && !keep.has(p.pid)) { keep.add(p.pid); grew = true; } }
+  return all.filter((p) => keep.has(p.pid));
 }
 function summarize(list) {
   const ext = list.filter((p) => /--extension-process/.test(p.cmd));
@@ -39,10 +44,11 @@ for (const name of configNames) {
   const cfg = CONFIGS[name];
   const l = { ...cfg.launch };
   if (typeof l.profile === 'function') l.profile = l.profile();
-  const { browser, userDataDir } = await launch(l);
+  const { browser } = await launch(l);
+  const rootPid = browser.process().pid;
   if (cfg.setup) await cfg.setup(browser);
   await new Promise((r) => setTimeout(r, cfg.warmupMs || 3000));
-  results[name] = { idle: summarize(processes(userDataDir)) };
+  results[name] = { idle: summarize(processes(rootPid)) };
   let open = 0;
   for (const n of tabCounts) {
     while (open < n) {
@@ -51,7 +57,7 @@ for (const name of configNames) {
       open += batch;
     }
     await new Promise((r) => setTimeout(r, 8000));
-    results[name][`tabs${n}`] = summarize(processes(userDataDir));
+    results[name][`tabs${n}`] = summarize(processes(rootPid));
     console.log(name, n, JSON.stringify(results[name][`tabs${n}`]));
   }
   await browser.close().catch(() => {});

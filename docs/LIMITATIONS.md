@@ -40,6 +40,12 @@ Grouped by cause. Counts come from `build/build-report.json` for the current lis
   mis-written one can rewrite navigations; the options page reports every user filter that
   produced a rule.
 
+## Observed in the benchmark
+
+* **Admiral-style walls (e.g. bild.de).** EasyList blocks `html-load.com` only with `$document,popup`; Veil and uBO apply that literally and the Admiral SDK loads as a script. uBO Lite's ruleset compiler folds the domain into an all-types block and happens to avoid the wall. Veil does not add a site-specific rule for this; it is a list-content matter.
+* **AdGuard MV3 defaults.** Only its Base and search-ads rulesets are enabled out of the box (Tracking Protection is off), which is why it scores 18 % against a reference that includes EasyPrivacy; its misses are almost all tracker hosts. Its two anti-adblock detections come from blocking the adsbygoogle bait without substituting a stub.
+* **Headless bot walls.** Even with a normal UA, Akamai/CloudFront occasionally serve 403 pages to one of the five parallel loads (kohls.com, deviantart.com); the harness records them as text collapses, which the breakage review then discards.
+
 ## Benchmark limitations
 
 * Headless Chrome with automation flags is treated differently by some sites (bot walls, consent

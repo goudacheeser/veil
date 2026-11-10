@@ -15,10 +15,15 @@ const concurrency = Number(arg('concurrency', 2));
 const runName = arg('run', new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19));
 const timeoutMs = Number(arg('timeout', 35000));
 const settleMs = 3000;
+// older Chromes can hang a CDP call until protocolTimeout; bound every post-load step
+const bounded = (p, ms = 15000) => Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error(`step timeout ${ms}ms`)), ms))]);
 const outDir = path.join(ROOT, 'bench/results/raw', runName);
 fs.mkdirSync(outDir, { recursive: true });
 
-const corpus = JSON.parse(fs.readFileSync(path.join(ROOT, 'bench/corpus/corpus.json'), 'utf8')).sites.filter((s) => !category || s.category === category).slice(0, limit);
+process.on('unhandledRejection', (e) => console.error('unhandled:', e && e.message));
+let corpus = JSON.parse(fs.readFileSync(path.join(ROOT, 'bench/corpus/corpus.json'), 'utf8')).sites.filter((s) => !category || s.category === category).slice(0, limit);
+// --resume skips sites that already have a record for every configuration of this run
+if (process.argv.includes('--resume')) corpus = corpus.filter((s) => !configNames.every((c) => fs.existsSync(path.join(outDir, `${s.domain}.${c}.json`))));
 console.log(`run ${runName}: ${corpus.length} sites × ${configNames.join(',')}`);
 
 const browsers = {};
@@ -38,6 +43,7 @@ await Promise.all(configNames.map(async (n) => { const p = await browsers[n].new
 async function measure(name, site) {
   const browser = browsers[name];
   const page = await browser.newPage();
+  page.setDefaultTimeout(timeoutMs);
   const cdp = await page.createCDPSession();
   await cdp.send('Network.enable', { maxTotalBufferSize: 0, maxResourceBufferSize: 0 });
   await cdp.send('Performance.enable');
@@ -62,7 +68,7 @@ async function measure(name, site) {
   rec.wallMs = Date.now() - t0;
   await new Promise((r) => setTimeout(r, settleMs));
   try {
-    rec.page = await page.evaluate(() => {
+    rec.page = await bounded(page.evaluate(() => {
       const nav = performance.getEntriesByType('navigation')[0] || {};
       const vids = [...document.querySelectorAll('video')];
       const text = document.body ? document.body.innerText : '';
@@ -76,13 +82,13 @@ async function measure(name, site) {
         comments: !!document.querySelector('[id*="comment" i],[class*="comment" i]'),
         hasBody: !!document.body && document.body.children.length > 0,
       };
-    });
+    }));
   } catch (e) { rec.page = { error: e.message.split('\n')[0] }; }
   try {
-    const m = await cdp.send('Performance.getMetrics');
+    const m = await bounded(cdp.send('Performance.getMetrics'));
     rec.metrics = Object.fromEntries(m.metrics.filter((x) => /TaskDuration|ScriptDuration|LayoutDuration|RecalcStyleDuration|JSHeapUsedSize|Nodes|Documents/.test(x.name)).map((x) => [x.name, x.value]));
   } catch {}
-  try { await page.screenshot({ path: path.join(outDir, `${site.domain}.${name}.jpg`), type: 'jpeg', quality: 35, clip: { x: 0, y: 0, width: 1366, height: 900 } }); } catch {}
+  if (CONFIGS[name].screenshots !== false) { try { await bounded(page.screenshot({ path: path.join(outDir, `${site.domain}.${name}.jpg`), type: 'jpeg', quality: 35, clip: { x: 0, y: 0, width: 1366, height: 900 } })); } catch {} }
   if (name === 'veil') {
     try {
       const w = await extensionWorker(browser, 'background/sw.js', 3000);
@@ -91,7 +97,7 @@ async function measure(name, site) {
     } catch (e) { rec.veilError = e.message; }
   }
   rec.requests = [...requests.values()];
-  await page.close().catch(() => {});
+  await bounded(page.close(), 10000).catch(() => {});
   return rec;
 }
 

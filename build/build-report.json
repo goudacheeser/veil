@@ -1,6 +1,6 @@
 {
  "version": "0.1.0",
- "built": "2026-11-09T23:44:41.245Z",
+ "built": "2026-11-10T04:32:12.236Z",
  "groups": {
   "core": {
    "lists": [
@@ -27219,5 +27219,5 @@
  ],
  "totalDnrRules": 121876,
  "enabledDnrRules": 117507,
- "buildMs": 2734
+ "buildMs": 1713
 }

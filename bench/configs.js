@@ -28,14 +28,14 @@ export const CONFIGS = {
     label: 'Veil', launch: { extensions: [DIST] },
     setup: async (browser) => {
       const w = await extensionWorker(browser, 'background/sw.js');
-      await w.evaluate(() => chrome.storage.local.set({ benchmark: true }));
+      await w.evaluate(() => globalThis.veilHandle({ type: 'bench', on: true }));
     },
   },
   ubol: { label: 'uBlock Origin Lite (default "Basic" mode)', launch: { extensions: [comp('ubol')] }, available: have(comp('ubol')) },
   adguard: { label: 'AdGuard MV3', launch: { extensions: [comp('adguard')] }, available: have(comp('adguard')), warmupMs: 8000 },
   ghostery: { label: 'Ghostery', launch: { extensions: [comp('ghostery')] }, available: have(comp('ghostery')), warmupMs: 6000 },
-  ubo: { label: 'uBlock Origin 1.76 (MV2, hosted in Chrome 126)', launch: { executable: () => chromePath(126), extensions: [comp('ubo/uBlock0.chromium')], args: MV2_FLAGS }, available: have(comp('ubo/uBlock0.chromium')) && hasChrome(126), warmupMs: 15000 },
-  none126: { label: 'No blocker (Chrome 126, baseline for ubo)', launch: { executable: () => chromePath(126), args: MV2_FLAGS }, available: hasChrome(126) },
+  ubo: { label: 'uBlock Origin 1.76 (MV2, hosted in Chrome 126)', launch: { executable: () => chromePath(126), extensions: [comp('ubo/uBlock0.chromium')], args: MV2_FLAGS }, available: have(comp('ubo/uBlock0.chromium')) && hasChrome(126), warmupMs: 15000, screenshots: false },
+  none126: { label: 'No blocker (Chrome 126, baseline for ubo)', launch: { executable: () => chromePath(126), args: MV2_FLAGS }, available: hasChrome(126), screenshots: false },
   'ubo-brave': { label: 'uBlock Origin (MV2) loaded unpacked in Brave: does NOT block (Brave allow-lists MV2 by store id), kept for the record', launch: { executable: BRAVE, extensions: [comp('ubo/uBlock0.chromium')], profile: () => braveProfile(false) }, available: false },
   // Brave's ad-block lists arrive through the component updater, so it must be allowed to fetch them
   brave: { label: 'Brave Shields (default)', launch: { executable: BRAVE, profile: () => braveProfile(true), allowComponents: true }, available: fs.existsSync(BRAVE), warmupMs: 25000 },
