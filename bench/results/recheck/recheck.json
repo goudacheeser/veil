@@ -1,0 +1,51 @@
+{
+ "ranobes.com": {
+  "none": {
+   "loadError": null,
+   "errors": [],
+   "url": "https://ranobes.com/",
+   "title": "Ранобэ онлайн - RANOBES.COM - Ранобэс",
+   "text": 2142,
+   "links": 78,
+   "images": 0,
+   "firstText": "Новеллы онлайн Логин Рожденные для богатой жизни 74 3.7 (3) 17 ДНЕЙ НАЗАД Когда дело доходило до ее судьбы, Ло Бэй была одной из миллиона, кому суждено было стать богатой и престижной. Поначалу Ло"
+  },
+  "veil": {
+   "loadError": null,
+   "errors": [],
+   "url": "https://ranobes.com/",
+   "title": "Ранобэ онлайн - RANOBES.COM - Ранобэс",
+   "text": 2142,
+   "links": 78,
+   "images": 0,
+   "firstText": "Новеллы онлайн Логин Рожденные для богатой жизни 74 3.7 (3) 17 ДНЕЙ НАЗАД Когда дело доходило до ее судьбы, Ло Бэй была одной из миллиона, кому суждено было стать богатой и престижной. Поначалу Ло"
+  }
+ },
+ "goerie.com": {
+  "none": {
+   "loadError": null,
+   "errors": [],
+   "url": "https://www.goerie.com/",
+   "title": "GoErie.com: Local News, Politics & Sports in Erie, PA",
+   "text": 2737,
+   "links": 148,
+   "images": 23,
+   "firstText": "News Sports Entertainment Opinion Real Estate Advertise Obituaries eNewspaper Public Notices Hero BX properties sell, but debt keeps growing for Erie's Pat Black We checked Erie grocery prices again. "
+  },
+  "veil": {
+   "loadError": null,
+   "errors": [
+    "Failed to fetch",
+    "Failed to fetch",
+    "Failed to fetch",
+    "Failed to fetch"
+   ],
+   "url": "https://www.goerie.com/",
+   "title": "GoErie.com: Local News, Politics & Sports in Erie, PA",
+   "text": 1478,
+   "links": 89,
+   "images": 23,
+   "firstText": "News Sports Entertainment Opinion Real Estate Advertise Obituaries eNewspaper Public Notices Hero BX properties sell, but debt keeps growing for Erie's Pat Black We checked Erie grocery prices again. "
+  }
+ }
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 322" width="720" height="322" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<title id="t">Breakage candidates</title>
+<desc id="d">Sites flagged by the breakage heuristic, % of paired sites (fewer is better; unconfirmed, see BREAKAGE_REVIEW). AdGuard MV3: 3.6%; Brave Shields (Brave batch): 3.8%; uBlock Origin (MV2) (Chrome 126 batch): 3.8%; uBlock Origin Lite: 4.0%; Ghostery: 4.2%; Veil: 4.7%.</desc>
+<style>
+  .surface { fill: #fcfcfb; }
+  .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
+  .subtitle, .note { fill: #52514e; font-size: 12.5px; }
+  .lbl { fill: #52514e; font-size: 13px; }
+  .lbl.hi, .val.hi { fill: #0b0b0b; font-weight: 600; }
+  .sub { fill: #898781; font-size: 11px; }
+  .val { fill: #52514e; font-size: 13px; font-variant-numeric: tabular-nums; }
+  .bar { fill: #c3c2b7; }
+  .bar-hi { fill: #2a78d6; }
+  .axis { stroke: #c3c2b7; stroke-width: 1; }
+  @media (prefers-color-scheme: dark) {
+    .surface { fill: #1a1a19; }
+    .title, .lbl.hi, .val.hi { fill: #f0efec; }
+    .subtitle, .note, .lbl, .val { fill: #c3c2b7; }
+    .bar { fill: #5c5b57; }
+    .bar-hi { fill: #3987e5; }
+    .axis { stroke: #383835; }
+  }
+</style>
+<rect class="surface" width="720" height="322" rx="8"/>
+<text class="title" x="20" y="32">Breakage candidates</text>
+<text class="subtitle" x="20" y="54">Sites flagged by the breakage heuristic, % of paired sites (fewer is better; unconfirmed, see BREAKAGE_REVIEW)</text>
+<line class="axis" x1="210" x2="210" y1="74" y2="286"/>
+<g><title>AdGuard MV3: 3.6%</title><text class="lbl" x="198" y="99" text-anchor="end">AdGuard MV3</text><path class="bar" d="M210,85h312.95238095238096a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-312.95238095238096z"/><text class="val" x="534.952380952381" y="99">3.6%</text></g>
+<g><title>Brave Shields (Brave batch): 3.8%</title><text class="lbl" x="198" y="125" text-anchor="end">Brave Shields</text><text class="sub" x="198" y="141" text-anchor="end">Brave batch</text><path class="bar" d="M210,119h331.2685038538697a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-331.2685038538697z"/><text class="val" x="553.2685038538697" y="133">3.8%</text></g>
+<g><title>uBlock Origin (MV2) (Chrome 126 batch): 3.8%</title><text class="lbl" x="198" y="159" text-anchor="end">uBlock Origin (MV2)</text><text class="sub" x="198" y="175" text-anchor="end">Chrome 126 batch</text><path class="bar" d="M210,153h337.3230140814791a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-337.3230140814791z"/><text class="val" x="559.3230140814791" y="167">3.8%</text></g>
+<g><title>uBlock Origin Lite: 4.0%</title><text class="lbl" x="198" y="201" text-anchor="end">uBlock Origin Lite</text><path class="bar" d="M210,187h352.5714285714285a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-352.5714285714285z"/><text class="val" x="574.5714285714284" y="201">4.0%</text></g>
+<g><title>Ghostery: 4.2%</title><text class="lbl" x="198" y="235" text-anchor="end">Ghostery</text><path class="bar" d="M210,221h372.3809523809524a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-372.3809523809524z"/><text class="val" x="594.3809523809524" y="235">4.2%</text></g>
+<g><title>Veil: 4.7%</title><text class="lbl hi" x="198" y="269" text-anchor="end">Veil</text><path class="bar-hi" d="M210,255h412a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-412z"/><text class="val hi" x="634" y="269">4.7%</text></g>
+<text class="note" x="20" y="308">Source: bench/results, 500-site corpus, paired loads. Batches differ in browser; see docs/RESULTS.md.</text>
+</svg>

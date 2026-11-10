@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 322" width="720" height="322" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<title id="t">Third-party trackers let through</title>
+<desc id="d">Ad/tracker requests to other domains that loaded anyway, all sites (fewer is better). Veil: 538; Ghostery: 604; uBlock Origin (MV2) (Chrome 126 batch): 815; uBlock Origin Lite: 919; Brave Shields (Brave batch): 1,011; AdGuard MV3: 9,247.</desc>
+<style>
+  .surface { fill: #fcfcfb; }
+  .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
+  .subtitle, .note { fill: #52514e; font-size: 12.5px; }
+  .lbl { fill: #52514e; font-size: 13px; }
+  .lbl.hi, .val.hi { fill: #0b0b0b; font-weight: 600; }
+  .sub { fill: #898781; font-size: 11px; }
+  .val { fill: #52514e; font-size: 13px; font-variant-numeric: tabular-nums; }
+  .bar { fill: #c3c2b7; }
+  .bar-hi { fill: #2a78d6; }
+  .axis { stroke: #c3c2b7; stroke-width: 1; }
+  @media (prefers-color-scheme: dark) {
+    .surface { fill: #1a1a19; }
+    .title, .lbl.hi, .val.hi { fill: #f0efec; }
+    .subtitle, .note, .lbl, .val { fill: #c3c2b7; }
+    .bar { fill: #5c5b57; }
+    .bar-hi { fill: #3987e5; }
+    .axis { stroke: #383835; }
+  }
+</style>
+<rect class="surface" width="720" height="322" rx="8"/>
+<text class="title" x="20" y="32">Third-party trackers let through</text>
+<text class="subtitle" x="20" y="54">Ad/tracker requests to other domains that loaded anyway, all sites (fewer is better)</text>
+<line class="axis" x1="210" x2="210" y1="74" y2="286"/>
+<g><title>Veil: 538</title><text class="lbl hi" x="198" y="99" text-anchor="end">Veil</text><path class="bar-hi" d="M210,85h20.203309181356115a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-20.203309181356115z"/><text class="val hi" x="242.2033091813561" y="99">538</text></g>
+<g><title>Ghostery: 604</title><text class="lbl" x="198" y="133" text-anchor="end">Ghostery</text><path class="bar" d="M210,119h23.172488374607983a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-23.172488374607983z"/><text class="val" x="245.17248837460798" y="133">604</text></g>
+<g><title>uBlock Origin (MV2) (Chrome 126 batch): 815</title><text class="lbl" x="198" y="159" text-anchor="end">uBlock Origin (MV2)</text><text class="sub" x="198" y="175" text-anchor="end">Chrome 126 batch</text><path class="bar" d="M210,153h32.66486428030713a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-32.66486428030713z"/><text class="val" x="254.66486428030714" y="167">815</text></g>
+<g><title>uBlock Origin Lite: 919</title><text class="lbl" x="198" y="201" text-anchor="end">uBlock Origin Lite</text><path class="bar" d="M210,187h37.34357088785552a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-37.34357088785552z"/><text class="val" x="259.34357088785555" y="201">919</text></g>
+<g><title>Brave Shields (Brave batch): 1,011</title><text class="lbl" x="198" y="227" text-anchor="end">Brave Shields</text><text class="sub" x="198" y="243" text-anchor="end">Brave batch</text><path class="bar" d="M210,221h41.48242673299448a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-41.48242673299448z"/><text class="val" x="263.4824267329945" y="235">1,011</text></g>
+<g><title>AdGuard MV3: 9,247</title><text class="lbl" x="198" y="269" text-anchor="end">AdGuard MV3</text><path class="bar" d="M210,255h412a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-412z"/><text class="val" x="634" y="269">9,247</text></g>
+<text class="note" x="20" y="308">Source: bench/results, 500-site corpus, paired loads. Batches differ in browser; see docs/RESULTS.md.</text>
+</svg>

@@ -15,9 +15,10 @@ in `bench/results/raw/batchA-chrome/<site>.<config>.jpg`.
 | deviantart.com | veil, ubol, ubo (text collapse) | CloudFront "403 ERROR: request could not be satisfied" under Veil: rate limiting from parallel loads, same class as kohls.com | not breakage (harness artifact) |
 | banggood.com, behance.net, fandom.com, foxnews.com, nordstrom.com | js-error spikes across blockers | raw records: visible text within 6 % of baseline (behance and nordstrom identical), image counts within 12 %, foxnews keeps its 3 playable videos; the extra errors are uncaught exceptions from ad/analytics code whose dependencies were blocked | pages intact, counted but harmless |
 | iheart.com, next.co.uk | "video not playable" (veil and others) | iheart screenshot renders normally (text 3774→3813, images 68→64); one promo `<video>` has no source. next.co.uk text identical (45066→45064) | expected consequence of blocking, content intact |
-| ranobes.com, goerie.com | veil-only flags | ranobes: text 2241→80 but images 0→6 and no screenshot captured (page state changed, could be an interstitial either way); goerie: text 2937→1492 with 5 new JS errors | unconfirmed, possible real breakage, needs a manual visit |
+| ranobes.com | veil-only flag (text 2241→80) | re-tested alone, one browser at a time (`bench/recheck.js`): identical with and without Veil (2,142 characters of text, 78 links, same title). The benchmark drop was a transient state during the parallel run | not breakage (rechecked) |
+| goerie.com | veil-only flag (text 2937→1492, +5 JS errors) | re-tested alone: without a blocker a full-screen "subscribe" overlay covers the page; with Veil the overlay is gone and the headline, navigation and story list render (screenshots in `bench/results/recheck/`). Text and link counts drop because the overlay and promo modules were removed; the remaining 59-link difference was not inspected one by one | not breakage (rechecked) |
 
-Net: after review, no confirmed candidate in batch A is a Veil-specific functional break (login,
-checkout, video playback or comments lost because of Veil) that another blocker avoided; two
-(ranobes.com, goerie.com) remain unconfirmed and the one real wall (bild.de) also catches uBO. The heuristic over-counts, roughly equally for every
+Net: after review and re-testing, no candidate in batch A is a Veil-specific functional break
+(login, checkout, video playback or comments lost because of Veil) that another blocker avoided;
+the one real wall (bild.de) also catches uBO. The heuristic over-counts, roughly equally for every
 blocker, which is why the results table reports candidates rather than a breakage percentage.

@@ -77,7 +77,19 @@ runs MV2 unconditionally) with its own baseline, because Chrome 157 no longer ru
 | uBO 1.76 MV2 (Chrome 126 batch) | 83.4 % | 815 | 17 | 7 |
 | Brave Shields (Brave batch) | 65.6 % | 1,011 | 17 | 7 |
 
-Where Veil loses: breakage candidates (AdGuard fewest, uBO Lite fewer than Veil; after manual review in docs/BREAKAGE_REVIEW.md none of Veil's candidates is a confirmed Veil-specific functional break, two are unconfirmed) and page-load speed-up, where uBO Lite ties Veil within 2 ms. Engine: 25 µs median per decision on 74k real URLs; cosmetic index opens in under 1 ms after a worker restart.
+Where Veil loses: breakage candidates (AdGuard fewest, uBO Lite fewer than Veil; after manual review and re-testing in docs/BREAKAGE_REVIEW.md none of Veil's candidates is a Veil-specific functional break) and page-load speed-up, where uBO Lite ties Veil within 2 ms. Engine: 25 µs median per decision on 74k real URLs; cosmetic index opens in under 1 ms after a worker restart.
+
+![Blocking coverage: Veil 89.2%, Ghostery 87.0%, uBO MV2 83.4%, uBO Lite 82.9%, Brave 65.6%, AdGuard 18.3%](docs/charts/coverage.svg)
+
+![Third-party trackers let through: Veil 538, Ghostery 604, uBO MV2 815, uBO Lite 919, Brave 1,011, AdGuard 9,247](docs/charts/trackers-let-through.svg)
+
+![Breakage candidates as % of sites: AdGuard 3.6%, Brave 3.8%, uBO MV2 3.8%, uBO Lite 4.0%, Ghostery 4.2%, Veil 4.7%](docs/charts/breakage.svg)
+
+![Page load speed-up vs no blocker: uBO Lite 30.8%, Veil 30.8%, uBO MV2 24.2%, Ghostery 21.0%, Brave 17.3%, AdGuard 11.0%](docs/charts/load-speedup.svg)
+
+![Memory overhead at 200 tabs: Veil 538 MB, AdGuard 1,448 MB, uBO Lite 1,675 MB, Ghostery 3,710 MB](docs/charts/memory-200-tabs.svg)
+
+Charts are generated from the scored results by `node bench/charts.js`.
 
 ## Honesty notes
 
