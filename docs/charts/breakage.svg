@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 322" width="720" height="322" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
 <title id="t">Breakage candidates</title>
-<desc id="d">Sites flagged by the breakage heuristic, % of paired sites (fewer is better; unconfirmed, see BREAKAGE_REVIEW). AdGuard MV3: 3.6%; Brave Shields (Brave batch): 3.8%; uBlock Origin (MV2) (Chrome 126 batch): 3.8%; uBlock Origin Lite: 4.0%; Ghostery: 4.2%; Veil: 4.7%.</desc>
+<desc id="d">Sites flagged by the breakage heuristic, % of paired sites (fewer is better; heuristic flags, reviewed in BREAKAGE_REVIEW). AdGuard MV3: 3.6%; Brave Shields (Brave batch): 3.8%; uBlock Origin (MV2) (Chrome 126 batch): 3.8%; uBlock Origin Lite: 4.0%; Ghostery: 4.2%; Veil: 4.7%.</desc>
 <style>
   .surface { fill: #fcfcfb; }
   .title { fill: #0b0b0b; font-size: 17px; font-weight: 600; }
@@ -23,7 +23,7 @@
 </style>
 <rect class="surface" width="720" height="322" rx="8"/>
 <text class="title" x="20" y="32">Breakage candidates</text>
-<text class="subtitle" x="20" y="54">Sites flagged by the breakage heuristic, % of paired sites (fewer is better; unconfirmed, see BREAKAGE_REVIEW)</text>
+<text class="subtitle" x="20" y="54">Sites flagged by the breakage heuristic, % of paired sites (fewer is better; heuristic flags, reviewed in BREAKAGE_REVIEW)</text>
 <line class="axis" x1="210" x2="210" y1="74" y2="286"/>
 <g><title>AdGuard MV3: 3.6%</title><text class="lbl" x="198" y="99" text-anchor="end">AdGuard MV3</text><path class="bar" d="M210,85h312.95238095238096a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-312.95238095238096z"/><text class="val" x="534.952380952381" y="99">3.6%</text></g>
 <g><title>Brave Shields (Brave batch): 3.8%</title><text class="lbl" x="198" y="125" text-anchor="end">Brave Shields</text><text class="sub" x="198" y="141" text-anchor="end">Brave batch</text><path class="bar" d="M210,119h331.2685038538697a4,4 0 0 1 4,4v12a4,4 0 0 1 -4,4h-331.2685038538697z"/><text class="val" x="553.2685038538697" y="133">3.8%</text></g>

@@ -87,7 +87,7 @@ const SRC = 'Source: bench/results, 500-site corpus, paired loads. Batches diffe
 const files = [
   chart({ file: 'coverage.svg', title: 'Blocking coverage', subtitle: 'Share of ad and tracker requests blocked (higher is better)', rows: rows((p) => (100 * p.blocked) / p.adRequests, 'desc'), format: pct1, note: SRC }),
   chart({ file: 'trackers-let-through.svg', title: 'Third-party trackers let through', subtitle: 'Ad/tracker requests to other domains that loaded anyway, all sites (fewer is better)', rows: rows((p) => p.falseNegTP, 'asc'), format: (v) => v.toLocaleString('en-US'), note: SRC }),
-  chart({ file: 'breakage.svg', title: 'Breakage candidates', subtitle: 'Sites flagged by the breakage heuristic, % of paired sites (fewer is better; unconfirmed, see BREAKAGE_REVIEW)', rows: rows((p) => (100 * p.breakage.length) / p.sites, 'asc'), format: pct1, note: SRC }),
+  chart({ file: 'breakage.svg', title: 'Breakage candidates', subtitle: 'Sites flagged by the breakage heuristic, % of paired sites (fewer is better; heuristic flags, reviewed in BREAKAGE_REVIEW)', rows: rows((p) => (100 * p.breakage.length) / p.sites, 'asc'), format: pct1, note: SRC }),
   chart({ file: 'load-speedup.svg', title: 'Page load speed-up', subtitle: 'Median loadEventEnd, % faster than the same batch with no blocker (higher is better)', rows: rows((p, base) => (100 * (base.loadMedian - p.loadMedian)) / base.loadMedian, 'desc'), format: pct1, note: SRC }),
 ];
 
