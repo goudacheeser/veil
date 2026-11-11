@@ -1,99 +1,125 @@
-# Veil
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/readme/logo-dark.png">
+    <img src="docs/readme/logo-light.png" width="300" alt="~/veil">
+  </picture>
+</p>
 
-An open-source Manifest V3 content blocker for Chromium with a complete ABP/uBO filter engine,
-no telemetry, and a reproducible benchmark harness that measures it against uBlock Origin,
-uBlock Origin Lite, AdGuard, Ghostery and Brave Shields.
+<p align="center">
+  <em>Out-blocks uBlock Origin. Free, open source, and silent.</em>
+</p>
 
-* **Engine**: full network syntax (`||`, `^`, regex, all `$options` incl. `$redirect`,
-  `$removeparam`, `$csp`, `$important`, `$badfilter`, `$denyallow`, `$to`), cosmetic filters with
-  per-site exceptions, procedural filters (`:has-text`, `:matches-path`, `:upward`, `:matches-css`,
-  `:matches-attr`, `:xpath`, `:remove`, `:style`, nested `:has`/`:not`), 46 scriptlets, hosts and
-  domain-list formats, `!#if` preprocessor.
-* **Blocking** via `declarativeNetRequest` static rulesets compiled at build time (117,507 enabled
-  rules from EasyList, EasyPrivacy, uBO filters/privacy/badware/unbreak/quick-fixes, EasyList
-  anti-adblock, Peter Lowe), plus dynamic rules for user filters, site toggles and list updates.
-* **Cosmetic filtering** from a zero-parse binary index: hostname-keyed selectors, id/class-keyed
-  generic selectors looked up incrementally with one message per animation frame, procedural
-  filters evaluated in the same batch.
-* **Scriptlets** registered as MAIN-world content scripts per hostname, so they run before page
-  scripts.
-* **Stateless service worker**: indexes are `Uint32Array` views over the bundled `.bin` files and
-  open in a few milliseconds after every MV3 worker restart.
-* **Privacy**: no network requests unless the user turns on list updates, which are Ed25519-signed
-  and SHA-256-verified. Every request the extension makes is logged on the options page.
-* **UI**: popup (site toggle, blocked count), options (list groups, user filters, updater, network
-  log), logger (every request with the matching filter and "would-block" false negatives), element
-  picker. Plain HTML, no dependencies.
-* **License**: MIT for Veil's code. The bundled filter lists keep their own licenses (GPL-3.0 / CC BY-SA 3.0); see THIRD_PARTY_LICENSES.md.
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-0c0c0c?style=flat-square" alt="MIT license">
+  <img src="https://img.shields.io/badge/manifest-V3-0c0c0c?style=flat-square" alt="Manifest V3">
+  <img src="https://img.shields.io/badge/chrome-137%2B-0c0c0c?style=flat-square" alt="Chrome 137 or later">
+  <img src="https://img.shields.io/badge/telemetry-none-0c0c0c?style=flat-square" alt="No telemetry">
+  <img src="https://img.shields.io/badge/benchmarked-500%20sites-0c0c0c?style=flat-square" alt="Benchmarked on 500 sites">
+</p>
 
-## Build and run
+<p align="center">
+  <img src="docs/readme/hero.jpg" width="880" alt="Veil. Out-blocks uBlock Origin. Free, open source, and silent. A terminal runs node bench/report.js and prints the share of ad and tracker requests blocked on 500 sites: Veil 89.2%, Ghostery 87.0%, uBlock Origin (MV2, measured in Chrome 126) 83.4%, uBlock Origin Lite 82.9%, Brave Shields (measured in Brave) 65.6%, AdGuard at default settings 18.3%. Veil blocked the most of six blockers.">
+</p>
 
+<p align="center">
+  <strong>89.2% of ad and tracker requests blocked &middot; 538 trackers let through &middot; 538 MB at 200 tabs</strong><br>
+  <strong>The most blocked of six blockers on 500 real sites.</strong> It ties on one measurement and loses two, shown below.<br>
+  <sub>Against uBlock Origin, uBlock Origin Lite, Ghostery, AdGuard and Brave Shields, November 2026. <a href="#numbers">Details</a>.</sub>
+</p>
+
+<p align="center">
+  <sub><a href="#install">Install</a> &middot; <a href="docs/RESULTS.md">Full results</a> &middot; <a href="docs/LIMITATIONS.md">Limitations</a> &middot; <a href="docs/ARCHITECTURE.md">Architecture</a></sub>
+</p>
+
+---
+
+Chrome's Manifest V3 took away the API that uBlock Origin was built on. Veil is an ad and tracker blocker built for the new rules from the start. Its own filter engine compiles the public filter lists into Chrome's built-in blocking rules when the extension is built, so the browser does the blocking and Veil itself stays out of the way, and out of your traffic.
+
+## Numbers
+
+<p align="center">
+  <img src="docs/readme/scoreboard.png" width="880" alt="Scoreboard. Ad and tracker requests blocked: Veil 89.2%, best of the rest Ghostery 87.0%, win. Third-party trackers let through: Veil 538, Ghostery 604, win. Extra memory with 200 tabs open: Veil 538 MB, AdGuard 1,448 MB, win; uBO and Brave not measured. Anti-adblock detectors passed: Veil 7 of 7, tied with uBO, uBO Lite, Ghostery and Brave. Page-load speed-up: Veil 30.8%, uBO Lite 30.8% and faster by 2 ms, loss. Sites flagged for possible breakage: Veil 4.7%, AdGuard 3.6%, loss.">
+</p>
+
+Six measurements against the blockers people actually use. Veil wins three, ties one and loses two, and the losses stay in this README:
+
+- **Breakage.** A heuristic flagged possible breakage on 4.7% of sites for Veil, the most of the six (AdGuard: 3.6%). A manual re-check of every flagged site found none that only Veil breaks: [docs/BREAKAGE_REVIEW.md](docs/BREAKAGE_REVIEW.md).
+- **Page-load speed.** uBlock Origin Lite was 2 ms faster at the median. Both made pages about 31% faster than no blocker at all.
+
+Two caveats. Whether a request counts as an ad or tracker is judged by public lists that Veil also ships, which favors Veil and uBlock Origin over blockers with their own lists. And uBlock Origin was measured in Chrome 126 (the last version that runs MV2 without workarounds) and Brave Shields in Brave, each against its own no-blocker baseline. Method, every table and the raw per-request data: [docs/RESULTS.md](docs/RESULTS.md).
+
+## Why it's different
+
+<p align="center">
+  <img src="docs/readme/different.png" width="880" alt="Compiled, not interpreted: 117,507 network rules, applied by Chrome itself. Instant after every restart: the element-hiding index opens in 0.44 ms. Silent by design: 0 requests of its own. Benchmarks you can rerun: 500 sites, 6 blockers, every request kept.">
+</p>
+
+- **Compiled, not interpreted.** Veil reads ABP and uBO filter syntax and turns it into 117,507 `declarativeNetRequest` rules at build time. Chrome applies them itself, so no extension code runs per request.
+- **Instant after every restart.** Chrome shuts down an MV3 extension's background worker whenever it goes idle. Veil's element-hiding filters live in a binary index that opens without parsing: 0.44 ms after a 2.7 ms file read, measured in Node.
+- **Silent by design.** Veil made no network requests in any benchmark or test run, and `test/integration.test.js` fails if it makes one. List updates are off until you turn them on, and are checked against an Ed25519 signature when you do.
+- **Benchmarks you can rerun.** The harness is in this repo, competitor builds are pinned by checksum, and every request from every page load is kept.
+
+<p align="center">
+  <img src="docs/readme/trace.png" width="880" alt="One tracker, start to finish. The filter, EasyPrivacy line 5961: ||scorecardresearch.com^$third-party. The rule Veil compiles it into: action block, urlFilter ||scorecardresearch.com^, domainType thirdParty. The result on nbcnews.com: BLOCKED script sb.scorecardresearch.com/beacon.js.">
+</p>
+
+## Install
+
+The Chrome Web Store listing is on its way. Until then, build it and load it unpacked:
+
+```bash
+git clone https://github.com/goudacheeser/veil
 ```
-npm install
-npm run fetch-lists      # or use the hash-locked copies already in third_party/lists
-npm run build            # dist/, veil-<version>.zip, veil-<version>.zip.sha256
-npm test                 # unit tests
+
+```bash
+cd veil && npm install && npm run build
+```
+
+Then open `chrome://extensions`, turn on **Developer mode**, choose **Load unpacked** and select the `dist/` folder. Needs Chrome 137 or later, and Node 22 or later to build.
+
+## What's inside
+
+| Part | What it does |
+|---|---|
+| **Network filters** | `\|\|`, `^`, regex, and the `$options` MV3 can express, including `$redirect`, `$removeparam`, `$csp`, `$important`, `$badfilter`, `$denyallow` and `$to`. Compiled from EasyList, EasyPrivacy, the uBO lists, EasyList anti-adblock and Peter Lowe's list. |
+| **Cosmetic filters** | Per-site and generic element hiding from a precompiled binary index; generic selectors are looked up as elements appear, one batch per animation frame. |
+| **Procedural filters** | `:has-text`, `:matches-path`, `:upward`, `:matches-css`, `:matches-attr`, `:xpath`, `:remove`, `:style`, nested `:has` / `:not`. |
+| **Scriptlets** | 46 scriptlets, registered per site so they run before the page's own scripts. |
+| **Privacy** | No requests unless you turn on list updates; updates are Ed25519-signed and SHA-256-checked; every request Veil makes is listed on its options page. |
+| **UI** | Popup with a per-site toggle, options page, request logger with the matching filter for each request, and an element picker. Plain HTML, no dependencies. |
+
+What it can't do: Manifest V3 rules out popup blocking, `$redirect-rule`, HTML filtering and a live blocked-count badge, and four procedural operators and 20 scriptlets aren't implemented yet. Full list with counts: [docs/LIMITATIONS.md](docs/LIMITATIONS.md).
+
+<details>
+<summary><b>Tests and benchmarks</b></summary>
+
+```bash
+npm test
 npx @puppeteer/browsers install chrome@stable --path bench/.browsers
 node --test test/integration.test.js
 ```
 
-Load `dist/` unpacked at `chrome://extensions`. Chrome 137+ (Ed25519 in WebCrypto, MAIN-world
-registered scripts).
-
-## Documentation
-
-* [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): engine, binary format and why it is a flattened
-  hash table rather than a radix trie, DNR mapping and priority ladder, rule-count budget, cosmetic
-  and scriptlet pipelines, worker lifecycle.
-* [docs/RESULTS.md](docs/RESULTS.md): benchmark results with raw data pointers.
-* [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md) and [docs/LIMITATIONS.md](docs/LIMITATIONS.md).
-* [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
-
-## Benchmarks
-
-```
-node bench/corpus/make-corpus.js                 # 500 sites: news 100, video 75, shopping 100, social 50, long-tail 175 (Tranco sample, seeded)
+```bash
+node bench/corpus/make-corpus.js
 node bench/run.js --configs=none,veil,ubol,adguard,ghostery --run=myrun
-node bench/analyze.js --run=myrun                # tables + JSON in bench/results/
-node bench/antiadblock/run.js                    # detector suite (BlockAdBlock/FuckAdBlock-style)
-node bench/microbench.js                         # engine per-decision cost and index open time
-node bench/memory.js --tabs=10,50,200            # memory / CPU of the browser process tree
+node bench/analyze.js --run=myrun
+node bench/antiadblock/run.js
+node bench/microbench.js
+node bench/memory.js --tabs=10,50,200
 ```
 
-Competitor builds are downloaded from their official GitHub releases into `bench/competitors/`
-(checksums in `bench/competitors/SHA256SUMS`). uBO (MV2) is hosted in Chrome 126 (the last Chrome that
-runs MV2 unconditionally) with its own baseline, because Chrome 157 no longer runs MV2.
+`npm run fetch-lists` downloads fresh filter lists; without it the build uses the hash-locked copies in `third_party/lists`. Competitor builds come from their official GitHub releases and are checked against `bench/competitors/SHA256SUMS`. uBlock Origin (MV2) runs in Chrome 126 against its own Chrome 126 baseline, because current Chrome refuses MV2 extensions.
 
-## Results (summary; full tables in docs/RESULTS.md)
+</details>
 
-500-site corpus, paired loads, requests judged by EasyList + EasyPrivacy + uBO + Fanboy/uBO annoyances compiled by Veil's own parser.
+## No allowlists
 
-| | coverage of ad/tracker requests | third-party trackers let through | breakage candidates (heuristic) | anti-adblock detectors passed (of 7) |
-|---|---|---|---|---|
-| **Veil** | **89.2 %** | **538** | 21 | **7** |
-| uBO Lite (Basic) | 82.9 % | 919 | 18 | 7 |
-| Ghostery | 87.0 % | 604 | 19 | 7 |
-| AdGuard MV3 (default: Tracking Protection off) | 18.3 % | 9,247 | 16 | 5 |
-| uBO 1.76 MV2 (Chrome 126 batch) | 83.4 % | 815 | 17 | 7 |
-| Brave Shields (Brave batch) | 65.6 % | 1,011 | 17 | 7 |
+Veil doesn't exempt any publisher in code. The only rules it ships beyond the public lists are the 11 in [`build/veil-defaults.txt`](build/veil-defaults.txt), which swap the scripts ad-block detectors probe for harmless stand-ins; none names a publisher, and the same rules exist in AdGuard Base and the uBO lists. Any exception is yours to add on the options page.
 
-Where Veil loses: breakage candidates (AdGuard fewest, uBO Lite fewer than Veil; after manual review and re-testing in docs/BREAKAGE_REVIEW.md none of Veil's candidates is a Veil-specific functional break) and page-load speed-up, where uBO Lite ties Veil within 2 ms. Engine: 25 µs median per decision on 74k real URLs; cosmetic index opens in under 1 ms after a worker restart.
+## Docs
 
-![Blocking coverage: Veil 89.2%, Ghostery 87.0%, uBO MV2 83.4%, uBO Lite 82.9%, Brave 65.6%, AdGuard 18.3%](docs/charts/coverage.svg)
+[Architecture](docs/ARCHITECTURE.md) &middot; [Results](docs/RESULTS.md) &middot; [Breakage review](docs/BREAKAGE_REVIEW.md) &middot; [Limitations](docs/LIMITATIONS.md) &middot; [Threat model](docs/THREAT_MODEL.md) &middot; [Contributing](docs/CONTRIBUTING.md)
 
-![Third-party trackers let through: Veil 538, Ghostery 604, uBO MV2 815, uBO Lite 919, Brave 1,011, AdGuard 9,247](docs/charts/trackers-let-through.svg)
+## License
 
-![Breakage candidates as % of sites: AdGuard 3.6%, Brave 3.8%, uBO MV2 3.8%, uBO Lite 4.0%, Ghostery 4.2%, Veil 4.7%](docs/charts/breakage.svg)
-
-![Page load speed-up vs no blocker: uBO Lite 30.8%, Veil 30.8%, uBO MV2 24.2%, Ghostery 21.0%, Brave 17.3%, AdGuard 11.0%](docs/charts/load-speedup.svg)
-
-![Memory overhead at 200 tabs: Veil 538 MB, AdGuard 1,448 MB, uBO Lite 1,675 MB, Ghostery 3,710 MB](docs/charts/memory-200-tabs.svg)
-
-Charts are generated from the scored results by `node bench/charts.js`.
-
-## Honesty notes
-
-The results document reports every metric where Veil loses and names which competitor is strongest
-on each. Breakage numbers are heuristic candidates with screenshots for manual confirmation, not
-confirmed breakage. Nothing in the code allowlists a publisher; Veil's only shipped rules are
-`build/veil-defaults.txt` (11 generic surrogate rules, each explained).
+[MIT](LICENSE) for Veil's code. The bundled filter lists keep their own licenses (GPL-3.0, CC BY-SA 3.0): see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md).
