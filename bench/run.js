@@ -22,6 +22,7 @@ fs.mkdirSync(outDir, { recursive: true });
 
 process.on('unhandledRejection', (e) => console.error('unhandled:', e && e.message));
 let corpus = JSON.parse(fs.readFileSync(path.join(ROOT, 'bench/corpus/corpus.json'), 'utf8')).sites.filter((s) => !category || s.category === category).slice(0, limit);
+const corpusSize = corpus.length; // recorded in run.json; --resume below must not shrink it
 // --resume skips sites that already have a record for every configuration of this run
 if (process.argv.includes('--resume')) corpus = corpus.filter((s) => !configNames.every((c) => fs.existsSync(path.join(outDir, `${s.domain}.${c}.json`))));
 console.log(`run ${runName}: ${corpus.length} sites × ${configNames.join(',')}`);
@@ -114,5 +115,5 @@ async function worker() {
 }
 await Promise.all(Array.from({ length: concurrency }, worker));
 for (const b of Object.values(browsers)) await b.close().catch(() => {});
-fs.writeFileSync(path.join(outDir, 'run.json'), JSON.stringify({ run: runName, configs: configNames, sites: corpus.length, category, finished: new Date().toISOString(), chrome: await Promise.resolve('see per-record'), labels: Object.fromEntries(configNames.map((n) => [n, CONFIGS[n].label])) }, null, 1));
+fs.writeFileSync(path.join(outDir, 'run.json'), JSON.stringify({ run: runName, configs: configNames, sites: corpusSize, category, finished: new Date().toISOString(), chrome: await Promise.resolve('see per-record'), labels: Object.fromEntries(configNames.map((n) => [n, CONFIGS[n].label])) }, null, 1));
 console.log('done →', outDir);
